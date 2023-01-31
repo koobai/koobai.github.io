@@ -1,0 +1,46 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><title>Hugo主题实现自适应布局，及自定义字体 - 记录生活</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=https://koobai.comfavicon.ico><link rel=canonical href=https://koobai.com/posts/responsive/><link rel=stylesheet href=/css/style.min.12b0ffbb5e7a10c6a2f29d32119cde46da889fd030983557eefe8364cfe822ff.css><meta name=description content="做事情的三分钟热度继续中，完善了博客的归档、标签云、平常观看的影视页面及文章页评论、标签等功能。过程很有趣及兴奋，就连大年三十都在乐此不疲的折腾着～～。由于当下移动设备为我们主要的浏览窗口，所以页面需考虑在对应的终端设备中实际的浏览体验。"><meta property="og:title" content="Hugo主题实现自适应布局，及自定义字体"><meta property="og:type" content="website"><meta property="og:url" content="https://koobai.com/posts/responsive/"><meta property="og:image" content="https://koobai.com/images/article/responsive.svg"><meta property="og:description" content="做事情的三分钟热度继续中，完善了博客的归档、标签云、平常观看的影视页面及文章页评论、标签等功能。过程很有趣及兴奋，就连大年三十都在乐此不疲的折腾着～～。由于当下移动设备为我们主要的浏览窗口，所以页面需考虑在对应的终端设备中实际的浏览体验。"><meta name=twitter:card content="summary"><meta name=twitter:site content="@koobai"><meta name=twitter:creator content="@koobai"></head><body class='page page-blog-single'><div id=menu-main-mobile class=menu-main-mobile><ul class=menu><li class=menu-item-home><a href=https://koobai.com/>Home</a></li><li class=menu-item-blog><a href=https://koobai.com/posts/>Blog</a></li><li class=menu-item-apps><a href=https://koobai.com/apps/>Apps</a></li><li class=menu-item-hardware><a href=https://koobai.com/hardware/>Hardware</a></li><li class=menu-item-movie><a href=https://koobai.com/movies/>Movie</a></li><li class=menu-item-about><a href=https://koobai.com/about/>About</a></li></ul></div><div id=wrapper class=wrapper><div class=header><a class=header-logo href=/>记录生活</a><div class=menu-main><ul><li class=menu-item-home><a href=/><span>Home</span></a></li><li class="menu-item-blog active"><a href=/posts/><span>Blog</span></a></li><li class=menu-item-apps><a href=/apps/><span>Apps</span></a></li><li class=menu-item-hardware><a href=/hardware/><span>Hardware</span></a></li><li class=menu-item-movie><a href=/movies/><span>Movie</span></a></li><li class=menu-item-about><a href=/about/><span>About</span></a></li></ul></div><div id=toggle-menu-main-mobile class=hamburger-trigger><button class=hamburger>Menu</button></div></div><div class=blog><div class=intro><h1>Hugo主题实现自适应布局，及自定义字体<span class=dot>.</span></h1><img src=/images/article/responsive.svg></div><div class=content><p>做事情的三分钟热度继续中，完善了博客的<a href=/archives>归档</a>、<a href=/tags>标签云</a>、<a href=/movie>平常观看的影视</a>页面及文章页评论、标签等功能。由于当下移动设备为我们主要的浏览窗口，所以页面需考虑在对应的终端设备中实际的浏览体验。</p><p>简单直接的方法，在页面样式表中添加@media，并在对应的尺寸范围中完善所需的样式：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>@</span><span class=k>media</span> <span class=o>(</span><span class=nt>max-width</span><span class=p>:</span><span class=nd>700px</span><span class=o>)</span><span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=c>/* 浏览器宽度尺寸小于700所呈现的样式 */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>media</span> <span class=nt>screen</span> <span class=nt>and</span> <span class=o>(</span><span class=nt>min-width</span><span class=p>:</span><span class=nd>700px</span><span class=o>)</span> <span class=nt>and</span> <span class=o>(</span><span class=nt>max-width</span><span class=p>:</span><span class=nd>900px</span><span class=o>)</span><span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=c>/* 浏览器宽度尺寸大于700小于900所呈现的样式 */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>@</span><span class=k>media</span> <span class=o>(</span><span class=nt>min-width</span><span class=p>:</span><span class=nd>900px</span><span class=o>)</span><span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=c>/* 浏览器宽度尺寸大于700所呈现的样式 */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>/* 根据每个页面实际的呈现需要，调整尺寸或自适应的分段需求 */</span>
+</span></span></code></pre></div><p>详细参数及解释参考：<a href=https://juejin.cn/post/6844903655020183565 target=_blank>利用@media screen实现网页布局的自适应</a></p><h3 id=扩展>扩展</h3><p>之前文章中提到标题采用了"得意黑"开源字体，记录下如何自定义字体，在样式文件中添加：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>@</span><span class=k>font-face</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>font-family</span><span class=o>:</span> <span class=nt>SmileySans</span><span class=o>;</span> <span class=c>/* 名称自定义 */</span>
+</span></span><span class=line><span class=cl>  <span class=nt>src</span><span class=o>:</span> <span class=nt>url</span><span class=o>(</span><span class=s1>&#39;../fonts/SmileySans-Oblique.ttf.woff2&#39;</span><span class=o>)</span> <span class=nt>format</span><span class=o>(</span><span class=s1>&#39;woff2&#39;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* 建议采用woff2格式，以降低容量大小，提高加载速度 */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>之后在需要调用此字体的样式文件中直接使用:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>body</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>font-family</span><span class=p>:</span> <span class=n>SmileySans</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h3 id=结尾>结尾</h3><p>博客所需的，整体折腾得差不多了，过程很有趣及兴奋，就连大年三十都在乐此不疲的折腾着～～。随着这个年也已过完，接下来的重点也是2023年重点，努力挣钱～挣钱～～挣钱～～～加油。</p></div><div class=page-time>2023-01-28</div><ul id=tags><div class=page-tag><div class=tag><li><a href=/tags/%E5%8D%9A%E5%AE%A2/>博客</a></li></div><div class=tag><li><a href=/tags/%E6%8A%98%E8%85%BE/>折腾</a></li></div><div class=tag><li><a href=/tags/hugo/>Hugo</a></li></div></div></ul><div class=previousnext><a class=previous href=https://koobai.com/posts/dark/>上一篇: Hugo主题添加暗黑(夜间)模式，并自动切换</a></div><div class=pinglun>已经浏览到这里了，不留下点什么？</div><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=waline></div><script type=module>
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+    init({
+      el: '#waline',
+      serverURL: 'https://w.koobai.com',
+      dark:'auto',
+      login:'disable',
+      imageUploader:false,
+      search:false,
+      reaction:false,
+      copyright:false,
+      lang:'zh-CN',
+    });
+  </script><div class=footer><div class=footer-social><span class="social-icon social-icon-twitter"><a href=https://twitter.com/koobai title=twitter target=_blank rel=noopener><img src=/images/social/twitter.svg width=24 height=24 alt=twitter></a></span>
+<span class="social-icon social-icon-telegram"><a href=https://t.me/delixiaohuangren title=telegram target=_blank rel=noopener><img src=/images/social/telegram.svg width=24 height=24 alt=telegram></a></span>
+<span class="social-icon social-icon-weibo"><a href=https://weibo.com/koobai title=weibo target=_blank rel=noopener><img src=/images/social/weibo.svg width=24 height=24 alt=weibo></a></span>
+<span class="social-icon social-icon-github"><a href=https://github.com/koobai title=github target=_blank rel=noopener><img src=/images/social/github.svg width=24 height=24 alt=github></a></span>
+<span class="social-icon social-icon-email"><a href=mailto:mekoobai@gmail.com title=email target=_blank rel=noopener><img src=/images/social/email.svg width=24 height=24 alt=email></a></span></div><br><span style=font-size:12px>&copy; 2023 <a href=/>koobai.com</a>.
+Powered by
+<a href=https://gohugo.io/ target=_blank>Hugo</a>,
+Theme by
+<a href=https://themes.gohugo.io/themes/hugo-winston-theme/ target=_blank>Hugo Winston</a>. Comment by
+<a href=https://github.com/walinejs/waline/ target=_blank>Waline</a>.
+<a href=https://beian.miit.gov.cn/ target=_blank>浙ICP备16011784号</a></span>
+<script async defer src=https://analytics.umami.is/script.js data-website-id=0504c917-db33-462a-a1ce-02c14be7b2bd></script></div></div><script type=text/javascript src=/js/bundle.min.5993fcb11c07dea925a3fbd58c03c7f1857197c35fccce3aa963a12c0b3c9960.js></script></body></html>
