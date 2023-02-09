@@ -1,96 +1,96 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><title>Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存 - 记录生活</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/koobai.png><link rel=canonical href=https://koobai.com/posts/tencentcos/><link rel=stylesheet href=/css/style.min.a3a09d81675cf0998ece4fd25205daa23f4ba7eb933e79bdca2151191966be4c.css><meta name=description content="博客逐步搭建完善，更新了日常使用的App、硬件页面。博客样式标题采用了&#34;得意黑&#34;开源字体。把二级域名改成一级，过程中发现Cloudflare Pages如果要绑定一级，须把域名的DNS服务器解析过去。解析之后，自己的nas访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的COS对象存储配合内容分发网络CDN搭建。 "><meta property="og:title" content="Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存"><meta property="og:type" content="website"><meta property="og:url" content="https://koobai.com/posts/tencentcos/"><meta property="og:image" content="https://koobai.com/images/article/cdn.svg"><meta property="og:description" content="博客逐步搭建完善，更新了日常使用的App、硬件页面。博客样式标题采用了&#34;得意黑&#34;开源字体。把二级域名改成一级，过程中发现Cloudflare Pages如果要绑定一级，须把域名的DNS服务器解析过去。解析之后，自己的nas访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的COS对象存储配合内容分发网络CDN搭建。 "><meta name=twitter:card content="summary"><meta name=twitter:site content="@koobai"><meta name=twitter:creator content="@koobai"></head><body class='page page-blog-single'><div id=menu-main-mobile class=menu-main-mobile><ul class=menu><li class=menu-item-home><a href=https://koobai.com/>Home</a></li><li class=menu-item-apps><a href=https://koobai.com/apps/>Apps</a></li><li class=menu-item-hardware><a href=https://koobai.com/hardware/>Hardware</a></li><li class=menu-item-movie><a href=https://koobai.com/movies/>Movie</a></li><li class=menu-item-about><a href=https://koobai.com/about/>About</a></li></ul></div><div id=wrapper class=wrapper><div class=header><a class=header-logo href=/>记录生活</a><div class=menu-main><ul><li class=menu-item-home><a href=/><span>Home</span></a></li><li class=menu-item-apps><a href=/apps/><span>Apps</span></a></li><li class=menu-item-hardware><a href=/hardware/><span>Hardware</span></a></li><li class=menu-item-movie><a href=/movies/><span>Movie</span></a></li><li class=menu-item-about><a href=/about/><span>About</span></a></li></ul></div><div id=toggle-menu-main-mobile class=hamburger-trigger><button class=hamburger>Menu</button></div></div><div class=blog><div class=intro><h1>Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存<span class=dot>.</span></h1><img src=/images/article/cdn.svg></div><div class=content><p>博客逐步搭建完善，更新了日常使用的<a href=https://koobai.com/apps/>App</a>、<a href=https://koobai.com/hardware/>硬件</a>页面。博客样式标题采用了"<a href=https://github.com/atelier-anchor/smiley-sans target=_blank>得意黑</a>&ldquo;开源字体。把二级域名改成一级，过程中发现Cloudflare Pages如果要绑定一级，须把域名的DNS服务器解析过去。解析之后，自己的nas访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的COS对象存储配合内容分发网络CDN搭建(主要它的cosbrowser界面是经过设计的ᵔ◡ᵔ；客服也很负责，咨询问题会电话打过来详细教你如何操作)。</p><p>在了解部署过程中发现Cyrus&rsquo;s Blog写的&rdquo;<a href=https://blog.xm.mk/posts/fc83 target=_blank>自动构建Hugo博客部署至腾讯云对象存储COS并刷新CDN</a>&ldquo;教程，一番折腾，完美。感谢作者。<br>备份记录下过程: (详细的注释可查看Cyrus&rsquo;s Blog)</p><h3 id=准备工作>准备工作：</h3><p>1.到腾讯云访问管理——访问密钥——API密钥管理中，新建一个账户：访问方式改为"编程访问&rdquo;，用户权限添加"QcloudCOSDataFullControl、 QcloudCDNFullAccess"。完成之后将生成的SecretId、SecretKey复制保存。<br>2.到Github新建一个仓库(私有公共都行)，把自己hugo生成的站点源文件(不是public下文件)同步过去。<br>3.在刚创建的仓库——Settings——Secrets and variables——Actions，新建SecretId、SecretKey、Bucket、 Region四个密钥。其中SecretId、SecretKey为上面复制保存的，Bucket(存储桶名称)、 Region(所属地域 )在COS中存储桶列表中获取。</p><h3 id=部署>部署:</h3><p>1.在Github仓库根目录，新建".github/workflows"文件夹，并新建xxx.yml文件，复制以下代码到文件里。作用：借助Github Action实现自动部署。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>name: Build and deploy
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><title>Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存 - 记录生活</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/koobai.png><link rel=canonical href=https://koobai.com/posts/tencentcos/><link rel=stylesheet href=/css/style.min.81d730cadd24107777fc6001ff538c74539035b7c055a69b0f0dc1ccbca2f45c.css><meta name=description content="博客逐步搭建完善，更新了日常使用的App、硬件页面。博客样式标题采用了&#34;得意黑&#34;开源字体。把二级域名改成一级，过程中发现Cloudflare Pages如果要绑定一级，须把域名的DNS服务器解析过去。解析之后，自己的nas访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的COS对象存储配合内容分发网络CDN搭建。 "><meta property="og:title" content="Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存"><meta property="og:type" content="website"><meta property="og:url" content="https://koobai.com/posts/tencentcos/"><meta property="og:image" content="https://koobai.com/images/article/cdn.svg"><meta property="og:description" content="博客逐步搭建完善，更新了日常使用的App、硬件页面。博客样式标题采用了&#34;得意黑&#34;开源字体。把二级域名改成一级，过程中发现Cloudflare Pages如果要绑定一级，须把域名的DNS服务器解析过去。解析之后，自己的nas访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的COS对象存储配合内容分发网络CDN搭建。 "><meta name=twitter:card content="summary"><meta name=twitter:site content="@koobai"><meta name=twitter:creator content="@koobai"></head><body class='page page-blog-single'><div id=menu-main-mobile class=menu-main-mobile><ul class=menu><li class=menu-item-home><a href=https://koobai.com/>Home</a></li><li class=menu-item-apps><a href=https://koobai.com/apps/>Apps</a></li><li class=menu-item-hardware><a href=https://koobai.com/hardware/>Hardware</a></li><li class=menu-item-movie><a href=https://koobai.com/movies/>Movie</a></li><li class=menu-item-about><a href=https://koobai.com/about/>About</a></li></ul></div><div id=wrapper class=wrapper><div class=header><a class=header-logo href=/>记录生活</a><div class=menu-main><ul><li class=menu-item-home><a href=/><span>Home</span></a></li><li class=menu-item-apps><a href=/apps/><span>Apps</span></a></li><li class=menu-item-hardware><a href=/hardware/><span>Hardware</span></a></li><li class=menu-item-movie><a href=/movies/><span>Movie</span></a></li><li class=menu-item-about><a href=/about/><span>About</span></a></li></ul></div><div id=toggle-menu-main-mobile class=hamburger-trigger><button class=hamburger>Menu</button></div></div><div class=blog><div class=intro><h1>Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存<span class=dot>.</span></h1><img src=/images/article/cdn.svg></div><div class=content><p>博客逐步搭建完善，更新了日常使用的<a href=https://koobai.com/apps/>App</a>、<a href=https://koobai.com/hardware/>硬件</a>页面。博客样式标题采用了"<a href=https://github.com/atelier-anchor/smiley-sans target=_blank>得意黑</a>&ldquo;开源字体。把二级域名改成一级，过程中发现Cloudflare Pages如果要绑定一级，须把域名的DNS服务器解析过去。解析之后，自己的nas访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的COS对象存储配合内容分发网络CDN搭建(主要它的cosbrowser界面是经过设计的ᵔ◡ᵔ；客服也很负责，咨询问题会电话打过来详细教你如何操作)。</p><p>在了解部署过程中发现Cyrus&rsquo;s Blog写的&rdquo;<a href=https://blog.xm.mk/posts/fc83 target=_blank>自动构建Hugo博客部署至腾讯云对象存储COS并刷新CDN</a>&ldquo;教程，一番折腾，完美。感谢作者。<br>备份记录下过程: (详细的注释可查看Cyrus&rsquo;s Blog)</p><h3 id=准备工作>准备工作：</h3><p>1.到腾讯云访问管理——访问密钥——API密钥管理中，新建一个账户：访问方式改为"编程访问&rdquo;，用户权限添加"QcloudCOSDataFullControl、 QcloudCDNFullAccess"。完成之后将生成的SecretId、SecretKey复制保存。<br>2.到Github新建一个仓库(私有公共都行)，把自己hugo生成的站点源文件(不是public下文件)同步过去。<br>3.在刚创建的仓库——Settings——Secrets and variables——Actions，新建SecretId、SecretKey、Bucket、 Region四个密钥。其中SecretId、SecretKey为上面复制保存的，Bucket(存储桶名称)、 Region(所属地域 )在COS中存储桶列表中获取。</p><h3 id=部署>部署:</h3><p>1.在Github仓库根目录，新建".github/workflows"文件夹，并新建xxx.yml文件，复制以下代码到文件里。作用：借助Github Action实现自动部署。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build and deploy</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 自动触发构建</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>main</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 构建hugo及生产静态页面</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>deploy</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>submodules</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>fetch-depth</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup Hugo</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-hugo@v2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>hugo-version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;latest&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>extended</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>hugo --minify</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 上传到腾讯COS存储桶</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup Python</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-python@v4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>python-version</span><span class=p>:</span><span class=w> </span><span class=m>3.9</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup coscmd and sdk</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>sudo pip install coscmd</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Configure coscmd</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>env</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>SECRET_ID</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.SecretId }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>SECRET_KEY</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.SecretKey }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>BUCKET</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.Bucket }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>REGION</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.Region }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Upload to COS</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>coscmd upload -rfs --delete public/ /</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 刷新腾讯CDN缓存目录</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Flush CDN</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>env</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>SECRET_ID</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.SecretId }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>SECRET_KEY</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.SecretKey }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          pip install --upgrade tencentcloud-sdk-python
+</span></span></span><span class=line><span class=cl><span class=sd>          python flush-dns.py -i $SECRET_ID -k $SECRET_KEY</span><span class=w>          
+</span></span></span></code></pre></div><p>2.在Github仓库根目录，新建flush-dns.py文件，复制以下代码到文件里，并将里面的"koobai.com"域名修改成自己的CDN加速域名。作用：通过Python脚本实现刷新CDN缓存，详细参数可参考<a href="https://console.cloud.tencent.com/api/explorer?Product=cdn&Version=2018-06-06&Action=PurgePathCache" target=_blank>腾讯的调用aip文档</a>。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=kn>import</span> <span class=nn>json</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>argparse</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>tencentcloud.common</span> <span class=kn>import</span> <span class=n>credential</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>tencentcloud.common.profile.client_profile</span> <span class=kn>import</span> <span class=n>ClientProfile</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>tencentcloud.common.profile.http_profile</span> <span class=kn>import</span> <span class=n>HttpProfile</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>tencentcloud.common.exception.tencent_cloud_sdk_exception</span> <span class=kn>import</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=n>TencentCloudSDKException</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>tencentcloud.cdn.v20180606</span> <span class=kn>import</span> <span class=n>cdn_client</span><span class=p>,</span> <span class=n>models</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># 自动触发构建
+</span></span><span class=line><span class=cl><span class=c1># 传入参数</span>
+</span></span><span class=line><span class=cl><span class=n>parser</span> <span class=o>=</span> <span class=n>argparse</span><span class=o>.</span><span class=n>ArgumentParser</span><span class=p>(</span><span class=n>description</span><span class=o>=</span><span class=s1>&#39;-i &lt;secretId&gt; -k &lt;secretKey&gt;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>parser</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=s1>&#39;-i&#39;</span><span class=p>,</span> <span class=s1>&#39;--secretid&#39;</span><span class=p>,</span> <span class=nb>type</span><span class=o>=</span><span class=nb>str</span><span class=p>,</span> <span class=n>required</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span> <span class=n>help</span><span class=o>=</span><span class=s1>&#39;secretId&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>parser</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=s1>&#39;-k&#39;</span><span class=p>,</span> <span class=s1>&#39;--secretkey&#39;</span><span class=p>,</span> <span class=nb>type</span><span class=o>=</span><span class=nb>str</span><span class=p>,</span> <span class=n>required</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span> <span class=n>help</span><span class=o>=</span><span class=s1>&#39;secretKey&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>args</span> <span class=o>=</span> <span class=n>parser</span><span class=o>.</span><span class=n>parse_args</span><span class=p>()</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>on:
-</span></span><span class=line><span class=cl>  push:
-</span></span><span class=line><span class=cl>    branches:
-</span></span><span class=line><span class=cl>      - main
+</span></span><span class=line><span class=cl><span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>cred</span> <span class=o>=</span> <span class=n>credential</span><span class=o>.</span><span class=n>Credential</span><span class=p>(</span><span class=n>args</span><span class=o>.</span><span class=n>secretid</span><span class=p>,</span><span class=n>args</span><span class=o>.</span><span class=n>secretkey</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>httpProfile</span> <span class=o>=</span> <span class=n>HttpProfile</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>httpProfile</span><span class=o>.</span><span class=n>endpoint</span> <span class=o>=</span> <span class=s2>&#34;cdn.tencentcloudapi.com&#34;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># 构建hugo及生产静态页面
+</span></span><span class=line><span class=cl>    <span class=n>clientProfile</span> <span class=o>=</span> <span class=n>ClientProfile</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>clientProfile</span><span class=o>.</span><span class=n>httpProfile</span> <span class=o>=</span> <span class=n>httpProfile</span>
+</span></span><span class=line><span class=cl>    <span class=n>client</span> <span class=o>=</span> <span class=n>cdn_client</span><span class=o>.</span><span class=n>CdnClient</span><span class=p>(</span><span class=n>cred</span><span class=p>,</span> <span class=s2>&#34;&#34;</span><span class=p>,</span> <span class=n>clientProfile</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>jobs:
-</span></span><span class=line><span class=cl>  deploy:
-</span></span><span class=line><span class=cl>    runs-on: ubuntu-latest
-</span></span><span class=line><span class=cl>    steps:
-</span></span><span class=line><span class=cl>      - uses: actions/checkout@v3
-</span></span><span class=line><span class=cl>        with:
-</span></span><span class=line><span class=cl>          submodules: true
-</span></span><span class=line><span class=cl>          fetch-depth: 0
+</span></span><span class=line><span class=cl>    <span class=n>req</span> <span class=o>=</span> <span class=n>models</span><span class=o>.</span><span class=n>PurgePathCacheRequest</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>params</span> <span class=o>=</span> <span class=p>{</span><span class=s2>&#34;Paths&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;https://koobai.com/&#34;</span><span class=p>,</span> <span class=s2>&#34;https://www.koobai.com/&#34;</span><span class=p>],</span> <span class=s2>&#34;FlushType&#34;</span><span class=p>:</span> <span class=s2>&#34;flush&#34;</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>req</span><span class=o>.</span><span class=n>from_json_string</span><span class=p>(</span><span class=n>json</span><span class=o>.</span><span class=n>dumps</span><span class=p>(</span><span class=n>params</span><span class=p>))</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>      - name: Setup Hugo
-</span></span><span class=line><span class=cl>        uses: peaceiris/actions-hugo@v2
-</span></span><span class=line><span class=cl>        with:
-</span></span><span class=line><span class=cl>          hugo-version: &#39;latest&#39;
-</span></span><span class=line><span class=cl>          extended: true
+</span></span><span class=line><span class=cl>    <span class=n>resp</span> <span class=o>=</span> <span class=n>client</span><span class=o>.</span><span class=n>PurgePathCache</span><span class=p>(</span><span class=n>req</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>resp</span><span class=o>.</span><span class=n>to_json_string</span><span class=p>())</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>      - name: Build
-</span></span><span class=line><span class=cl>        run: hugo --minify
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># 上传到腾讯COS存储桶
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>      - name: Setup Python
-</span></span><span class=line><span class=cl>        uses: actions/setup-python@v4
-</span></span><span class=line><span class=cl>        with:
-</span></span><span class=line><span class=cl>          python-version: 3.9
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>      - name: Setup coscmd and sdk
-</span></span><span class=line><span class=cl>        run: sudo pip install coscmd
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>      - name: Configure coscmd
-</span></span><span class=line><span class=cl>        env:
-</span></span><span class=line><span class=cl>          SECRET_ID: ${{ secrets.SecretId }}
-</span></span><span class=line><span class=cl>          SECRET_KEY: ${{ secrets.SecretKey }}
-</span></span><span class=line><span class=cl>          BUCKET: ${{ secrets.Bucket }}
-</span></span><span class=line><span class=cl>          REGION: ${{ secrets.Region }}
-</span></span><span class=line><span class=cl>        run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>      - name: Upload to COS
-</span></span><span class=line><span class=cl>        run: coscmd upload -rfs --delete public/ /
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># 刷新腾讯CDN缓存目录
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>      - name: Flush CDN
-</span></span><span class=line><span class=cl>        env:
-</span></span><span class=line><span class=cl>          SECRET_ID: ${{ secrets.SecretId }}
-</span></span><span class=line><span class=cl>          SECRET_KEY: ${{ secrets.SecretKey }}
-</span></span><span class=line><span class=cl>        run: |
-</span></span><span class=line><span class=cl>          pip install --upgrade tencentcloud-sdk-python
-</span></span><span class=line><span class=cl>          python flush-dns.py -i $SECRET_ID -k $SECRET_KEY
-</span></span></code></pre></div><p>2.在Github仓库根目录，新建flush-dns.py文件，复制以下代码到文件里，并将里面的"koobai.com"域名修改成自己的CDN加速域名。作用：通过Python脚本实现刷新CDN缓存，详细参数可参考<a href="https://console.cloud.tencent.com/api/explorer?Product=cdn&Version=2018-06-06&Action=PurgePathCache" target=_blank>腾讯的调用aip文档</a>。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>import json
-</span></span><span class=line><span class=cl>import argparse
-</span></span><span class=line><span class=cl>from tencentcloud.common import credential
-</span></span><span class=line><span class=cl>from tencentcloud.common.profile.client_profile import ClientProfile
-</span></span><span class=line><span class=cl>from tencentcloud.common.profile.http_profile import HttpProfile
-</span></span><span class=line><span class=cl>from tencentcloud.common.exception.tencent_cloud_sdk_exception import (
-</span></span><span class=line><span class=cl>    TencentCloudSDKException,
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>from tencentcloud.cdn.v20180606 import cdn_client, models
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># 传入参数
-</span></span><span class=line><span class=cl>parser = argparse.ArgumentParser(description=&#39;-i &lt;secretId&gt; -k &lt;secretKey&gt;&#39;)
-</span></span><span class=line><span class=cl>parser.add_argument(&#39;-i&#39;, &#39;--secretid&#39;, type=str, required=True, help=&#39;secretId&#39;)
-</span></span><span class=line><span class=cl>parser.add_argument(&#39;-k&#39;, &#39;--secretkey&#39;, type=str, required=True, help=&#39;secretKey&#39;)
-</span></span><span class=line><span class=cl>args = parser.parse_args()
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>try:
-</span></span><span class=line><span class=cl>    cred = credential.Credential(args.secretid,args.secretkey)
-</span></span><span class=line><span class=cl>    httpProfile = HttpProfile()
-</span></span><span class=line><span class=cl>    httpProfile.endpoint = &#34;cdn.tencentcloudapi.com&#34;
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    clientProfile = ClientProfile()
-</span></span><span class=line><span class=cl>    clientProfile.httpProfile = httpProfile
-</span></span><span class=line><span class=cl>    client = cdn_client.CdnClient(cred, &#34;&#34;, clientProfile)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    req = models.PurgePathCacheRequest()
-</span></span><span class=line><span class=cl>    params = {&#34;Paths&#34;: [&#34;https://koobai.com/&#34;, &#34;https://www.koobai.com/&#34;], &#34;FlushType&#34;: &#34;flush&#34;}
-</span></span><span class=line><span class=cl>    req.from_json_string(json.dumps(params))
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    resp = client.PurgePathCache(req)
-</span></span><span class=line><span class=cl>    print(resp.to_json_string())
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>except TencentCloudSDKException as err:
-</span></span><span class=line><span class=cl>    print(err)
+</span></span><span class=line><span class=cl><span class=k>except</span> <span class=n>TencentCloudSDKException</span> <span class=k>as</span> <span class=n>err</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>err</span><span class=p>)</span>
 </span></span></code></pre></div><p>自此部署完毕，当有新文件上传到 main 分支，就会自动触发（hugo生成静态文件——上传到COS——刷新CDN缓存）。</p><h3 id=查看是否部署成功>查看是否部署成功：</h3><p>1.Github仓库Actions下，查看构建记录<br>2.COS存储桶下的文件变动<br>3.CDN刷新预热下，操作记录——目录刷新</p><h3 id=费用>费用：</h3><p>COS、CDN费用(包含存储+CDN回源流量+CDN流量+HTTPS请求等)，个人站没什么流量，应该很低，跑一段时间看看。另外腾讯云也提供了六个月一部分免费试用~~</p><h3 id=扩展>扩展：</h3><p>因为博客源文件在Github里，可以利用vercel平台读取仓库也自动构建一个。如果使用的是阿里云域名DNS服务器，可以在解析请求来源选择"境外"，&ldquo;记录值"填写vercel平台绑定域名时所提供的。</p><p>这样国内网络访问的时候走腾讯CDN，国外访问的时候走vercel平台所提供的节点。</p></div><div class=page-time>2023-01-15</div><ul id=tags><div class=page-tag><div class=tag><li><a href=/tags/%E5%8D%9A%E5%AE%A2/>博客</a></li></div><div class=tag><li><a href=/tags/%E6%8A%98%E8%85%BE/>折腾</a></li></div><div class=tag><li><a href=/tags/hugo/>Hugo</a></li></div></div></ul><div class=previousnext><a class=previous href=https://koobai.com/posts/time/>上一篇: 十年弹指一挥间</a>
 <a class=next href=https://koobai.com/posts/dark/>下一篇: Hugo主题添加暗黑(夜间)模式, 并自动切换</a></div><div class=pinglun>已经浏览到这里了，不留下点什么？</div><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=waline></div><script type=module>
     import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
