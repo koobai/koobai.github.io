@@ -1,15 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World, Hello 2023 on 记录生活</title><link>https://koobai.com/</link><description>Recent content in Hello World, Hello 2023 on 记录生活</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 09 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://koobai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Synology 群晖 DS920+ 使用之旅</title><link>https://koobai.com/posts/synology/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/synology/</guid><description>购买过程 记不清是从什么时候开始了解NAS的，2021年4月买过一台群晖DS220+，使用几天发现折腾起来非常麻烦，直接给退了。时间来到2021年末，了解到极空间Z4，于是买回来试试，发现系统极其易用，非常喜欢。但没用几天，品牌宣布发布新款。。。，于是退了老款，等新款发售。上架之后，第一时间下单，不知为何拷贝外接硬盘内容会断连，联系品牌工程师，一番测试也无法解决，只能选择退货。京东填写退货理由是质量问题，品牌售后联系说只能选七天无理由退货，如果选择质量问题，必须退回厂里先检测，无问题就原路返回有问题就给退换。。。。京东使用了这么多年，第一次遇到品牌这种操作，一下子对极空间的好感度降至零点，退了之后就不考虑了。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World, Hello 2023 on 记录生活</title><link>https://koobai.com/</link><description>Recent content in Hello World, Hello 2023 on 记录生活</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://koobai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Apple TV 4K (第二代) 使用体验</title><link>https://koobai.com/posts/appletv/</link><pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/appletv/</guid><description>购买背景 自己喜欢观影，为了方便直接使用奈飞 (Netflix)，在2020年时购入了 Google TV，一直使用得不错。直到买了群晖，在折腾影视串流的过程中，发现大家都推荐 Infuse 这款软件。一番了解，确实很不错，支持市面上所有的视频、音频格式，年订阅9.9美元，最主要的是串流的海报墙太美了～～。唯一的缺陷就是只支持 Apple 生态，其他都好说，本身电脑手机Pad都是Apple，但最主要的电视观影工具 Google TV 使不上呀。纠结很久，实在受不了Infuse的诱惑，于是淘宝了一台 Apple TV 4k (第 2 代)。
+连接方式 Apple TV 连 Soundba 音响ARC接口 &amp;gt; Soundba 连电视eARC接口，这样就可以，画面由电视显示、声音由Soundba输出。
+使用感受 2022年1月3号买的，目前也使用了一年多时间，整体感受就是一分钱一分货，比之前的 Google TV 不管是流畅度、系统美观度，完全都不是一个量级。特别喜欢铝制一体成型的遥控器，非常有质感，就是冬天使用冰手。
+由于家里的智能设备也通过HomeKit控制，Apple TV 插着直流电，也就充当作为智能中枢使用。另外有台电视不支持杜比视界，可以使用机器配合iPhone给电视屏幕校色。
+目前TV中，常用的App：
+1. Netflix 买这些盒子最初的需求就是为了能使用Netflix，喜欢它的一点：剧集基本上都是一次性放出，看起来非常爽。每年都有那么几部好看的，如：暗黑、怪奇物语、风骚律师、纸房子，最近很火的黑暗荣耀。但每个月的订阅费确实不便宜，咬牙坚持几个月后，上了合租车。
+2. Youtube 关注了自己喜欢的几个频道，在电视上看还是很爽的，特别是订阅了会员之后，无广告。之前印度区一个月也就6块钱，最近开始涨价，再下去可能又得找合租车了。
+3. Infuse 买 Apple TV 就是因为它。通过WebDAV的方式，串联起Docker应用Alist，观影起来确实方便。到期之后，又订阅了一年，只能说Apple生态必备。
+4. Synology Photos 群晖此应用最近才上架Apple TV，现在各个终端设备齐全了，一家人坐在电视前浏览照片还是很爽的。不过浏览视频的时候，需要在软件设置中开启HTTP播放，否则无法浏览。
+5. Cheers Bilibili第三方客户端，目前可加入作者的TestFlight。自己很少看Bilibili，一般是找什么教程的时候，上去搜索下。
+另外还有HBOMAX、Disnep+、Apple TV应用，但都必须得订阅，全部加一起还是不少费用，所以直接通过Alist串流阿里云盘观看自己想看的。
+总结 由于自己喜欢观影，使用下来，这笔投资还是很划算。而且此类设备可多年不更新，所以性价比一下子就上来了。目前唯一的痛点就是，观看国内的爱奇艺、腾讯、优酷得退回电视系统，使用体验的割裂感就很强了，当然这个跟Apple TV没关系。</description></item><item><title>Synology 群晖 DS920+ 使用之旅</title><link>https://koobai.com/posts/synology/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/synology/</guid><description>购买过程 记不清是从什么时候开始了解NAS的，2021年4月买过一台群晖DS220+，使用几天发现折腾起来非常麻烦，直接给退了。时间来到2021年末，了解到极空间Z4，于是买回来试试，发现系统极其易用，非常喜欢。但没用几天，品牌宣布发布新款。。。，于是退了老款，等新款发售。上架之后，第一时间下单，不知为何拷贝外接硬盘内容会断连，联系品牌工程师，一番测试也无法解决，只能选择退货。京东填写退货理由是质量问题，品牌售后联系说只能选七天无理由退货，如果选择质量问题，必须退回厂里先检测，无问题就原路返回有问题就给退换。。。。京东使用了这么多年，第一次遇到品牌这种操作，一下子对极空间的好感度降至零点，退了之后就不考虑了。
 回到重新选择NAS上，了解了下威联通，性价比不错，但系统界面实在是无法欣赏，只能放弃。最后好像能选的品牌也就群晖了，基于一步到位原则，咬咬牙直接在淘宝授权商购自一台DS920+～～
 周边搭配 机器到位，对应的搭配组合：1.送的一条4g内存、一套防尘罩。2.三块希捷酷狼4T硬盘。3.两条三星250g SSD。4.山特850 UPS不间断电源。
 折腾之旅 准备就绪，经过一年多的折腾及稳定运行使用，满足了自己需求：数据备份、影视存储。目前主要使用的套件：
 1. 存储管理器 三块硬盘使用逻辑：两块组Raid 1，一块Basic。重要数据存储在Raid上；极为重要数据，再通过Hyper Backup套件定期自动备份到Basic硬盘上，再定期备份到外置硬盘。影视、mac系统备份，存储到Basic硬盘上。
 两条ssd,作为Raid 1的读写缓存。
-2. Synology Drive 群晖的核心套件。电脑中日常工作存储文件夹通过Synology Drive连接，保存修改的同时自动同步备份到群晖。目前使用的笔记类应用也是选择直接存储本地的，这样就能实时备份到群晖。如：Typora、妙言，再通过webdav连接方式，以供其他终端设备显示。
-3. Synology Photos 相册套件，跟Eileen两个人的手机，实时自动备份。套件的共享空间功能，成员间能实时相互分享喜欢的照片。整体使用起来跟系统相册应用没什么差别。
+2. Synology Drive 群晖的核心套件。电脑中日常工作存储文件夹通过Synology Drive连接，保存修改的同时自动同步备份到群晖。目前使用的笔记类应用也是选择直接存储本地的，这样就能实时备份到群晖，如：Typora、妙言。再通过WebDAV方式连接访问，以供其他终端设备显示。
+3. Synology Photos 相册套件，跟Eileen两个人的手机，实时自动备份。套件的共享空间功能，能实时相互分享喜欢的照片。整体使用起来跟系统相册应用没什么差别。
 4. File Station 这好像没什么说的，类似于mac下的访达、win下的我的电脑，必用套件。
 5. 迅雷 只要你是会员，下载速度还是杠杠的，有些资源电脑版本无法下载，但套件能下～～。很多人会用PD、PT，然后通过Docker应用自动触发下载，发现自己平常也用不上。
 6. Docker 使用NAS前不知道什么是Docker，使用之后，只能说没了它，乐趣要少一大半～～目前使用的应用为 4 个：
-1. Alist 官方介绍：一个支持多种存储的文件列表程序。自己使用主要的作用是影视中转站：先把资源存储到阿里云盘 &amp;gt; Alist连接阿里云盘 &amp;gt; Infuse通过webdav方式连接Alist，之后就愉快的观影。
+1. Alist 官方介绍：一个支持多种存储的文件列表程序。自己使用主要的作用是影视中转站：先把资源存储到阿里云盘 &amp;gt; Alist连接阿里云盘 &amp;gt; Infuse通过WebDAV方式连接Alist，之后就愉快的观影。
 2. Ddns-go 由于运营商的公网IP会实时变化，通过它可自动获取自己的公网IP，并解析到对应的域名上。外网访问NAS必备。
 3. Homeassistant 家里接入了不少小米系的智能设备，日常除了使用米家控制之外，可通过Homeassistant接入HomeKit。如果是苹果的全家桶用户，使用起来非常方便，特别是打开app的速度比米家快了不知道有多少。
 4. Vaultwarden 密码管理工具，Bitwarden的轻量应用。数据存储本地，全平台使用，再也不用记该死的密码了。
@@ -39,20 +50,16 @@ name: Build and deploy # 自动触发构建 on: push: branches: - main # 构建h
 于是，了解了一圈搭建工具，最终使用Hugo，搭配GitHub &amp;amp; Cloudflare来实现。搭建过程中，似乎找回了，十年前折腾博客的乐趣：选主题然后修改成自己中意的样子，很满足。
 既然，博客已搭建，定位还是日常的生活记录（搭建过程中，翻出以前的博客备份记录，看着每篇文字，了解彼时写的感受，嗯，这应该就是记录的意义）。同时打算分享下：日常使用的软件、平常观看的影视、喜欢折腾的物品等。
 十年间个人的变化，体重从一个量级跃升到另外好几个量级，头发从中间快速的退去，到干脆剃光。之前2013年有篇博客记录Eileen刚怀孕几个月，初为父母的心理活动，到今天，女儿已9周岁多，三年级了都，时间确实是弹指一挥间。十年前，写着刚考完路试拿驾照，买车需要等到买房了才能想。十年后，不管好不好，目标至少都实现了。
-十年后，事业好像回到原点，又到了以前的状态。希望2023年借由新的博客开始，也是新事业的起点。。。。加油。。。</description></item><item><title>入手机械键盘路程 &amp; VIA改键注释备忘</title><link>https://koobai.com/posts/keyboard/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/keyboard/</guid><description>入手机械键盘到客制化机械键盘路程 2021年3月在京东购买了京造K2（Keychron K2），这是第一把机械键盘。同年12月购买了sspai × Keychron 联名的K3，买它就单纯觉得白色好看。到此，客制化三个字也没听过，时间到了22年6月，sspai × Keychron 联名出了Q1，觉得配色也蛮好看，看介绍，才知道客制化概念，觉得蛮有意思的，于是买了这把Q1回来。
-入手之后，从完全不懂，到开始改轴下垫、贴美纹纸、换卫星轴、润轴、数据线定制、VIA自定义，也还蛮有乐趣～
-7月份某晚，见微博上有人说某个品牌一个小时卖了6000把键盘，这时才知道Link 65，觉得65键也蛮好的小巧，之后就看到ZOOM65 R2开团。几个特性促成了上车： 蓝牙功能、65键 、带旋钮（用惯了q1旋钮，觉得非常方便）。
-谈不上入坑，对雨滴、麻将、HiFi等，也没感觉。更多是因为颜值才入的手～～
-备忘：机械键盘VIA改键注释。VIA软件中的宏、any使用： 完整的按键对照表参考文档：https://docs.qmk.fm/#/keycodes LGUI = 左cmd键，LALT = 左option键，LCTL = 左control键，LSFT = 左shift键 (缩写写法对应按键：g=cmd，a=option，c=control，s=shift)
-mac系统下via软件中的win = command，alt = option
+十年后，事业好像回到原点，又到了以前的状态。希望2023年借由新的博客开始，也是新事业的起点。。。。加油。。。</description></item><item><title>入手机械键盘路程 &amp; VIA改键注释备忘</title><link>https://koobai.com/posts/keyboard/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/keyboard/</guid><description>入手机械键盘到客制化机械键盘路程 2021年3月在京东购买了京造K2（Keychron K2），这是第一把机械键盘。同年12月购买了sspai × Keychron 联名的K3，买它就单纯觉得白色好看。到此，客制化三个字也没听过，时间到了22年6月，sspai × Keychron 联名出了Q1，觉得配色也蛮好看，看介绍，才知道客制化概念，蛮有意思，于是买了这把Q1回来。
+入手之后，从完全不懂，到开始改轴下垫、贴美纹纸、换卫星轴、数据线定制、VIA自定义，还蛮有乐趣～
+7月份，见微博上有人说某个品牌一个小时卖了6000把键盘，这时才知道 Link 65。之后看到 ZOOM 65 R2开团，几个特性促成了上车： 蓝牙、65键 、带旋钮（用惯了Q1旋钮，非常方便）。
+谈不上入坑，对雨滴、麻将、HiFi等，也没感觉。更多是因为颜值～～
+VIA软件中的宏、any使用注释备忘： 完整的按键对照表参考文档：https://docs.qmk.fm/#/keycodes LGUI = 左cmd键，LALT = 左option键，LCTL = 左control键，LSFT = 左shift键 (缩写写法对应按键：G = CMD，A = Option，C = Control，S = Shift)
+Mac 系统下 VIA 软件中的 Win = Command，Alt = Option
 1. 宏使用(自定义按键) 左侧MACROS选项菜单为宏，宏对应0-15个按键，
 写法如：{KC_LGUI,KC_C}，意思为CMD+C 写法如2：{KC_LGUI,KC_LSFT,KC_4}，意思为cmd+shift+4
 2. any键使用(更自主的自定义按键) 文档：https://docs.qmk.fm/#/feature_advanced_keycodes 写法如：G(KC_C) 意思为CMD+C 写法如2：SGUI(kc_4) 意思为cmd+shift+4
-3. any特殊用法：键盘切换层 ( LAYER 0 1 2 3 ) 使用方法文档：https://docs.qmk.fm/#/feature_layers?id=switching-and-toggling-layers
-a. 单击切换层 写法如：TO(0) 或 直接在软件中选择TO(0)按键。意思为单击进入键盘第零层
-b. 按住（长按）切换层 写法如：MO(1) 或 直接在软件中选择MO(1)按键。意思为按住(长按)进入键盘第一层，松开回到原始层
-c. 按住(长按)为切换层，单击正常按键 写法如：LT(1,KC_C) 意思为按住(长按)进入键盘第一层，单击为字母c
-d. 按住(长按)为修饰键（可多个组合），单击正常按键 修饰键为：command、optio等等 使用方法文档：https://docs.</description></item><item><title>简介</title><link>https://koobai.com/about/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/about/</guid><description>关于我 出生成长在江西婺源，大学主修服装设计专业。毕业之后跟Eileen到了浙江杭州。为了孩子上学，2019年成为新杭州人，定居杭州~~
+3. any特殊用法：键盘切换层 ( LAYER 0 1 2 3 ) 使用方法文档：https://docs.qmk.fm/#/feature_layers?id=switching-and-toggling-layers</description></item><item><title>简介</title><link>https://koobai.com/about/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/about/</guid><description>关于我 出生成长在江西婺源，大学主修服装设计专业。毕业之后跟Eileen到了浙江杭州。为了孩子上学，2019年成为新杭州人，定居杭州~~
 工作背景 15年以上设计相关工作经验，其中8年以上团队管理经验，并一手从0-1-N的完整搭建高达110人以上的设计团队。服务过线下传统行业（广告、服装公司）到线上互联网行业（国内社交、跨境电商公司）。并经历了从PC时代到移动互联网时代的蜕变。
 关于博客 05年QQ空间刚推出时，那个疯狂~~上班没事就折腾，下班回家，家里没电脑还想得慌。10月份买了电脑之后，热情逐步熄灭。开始通过朋友介绍买域名空间，什么都不懂，只知道搞几张图片放在页面上，后来Alpar说做博客(当时还不知道什么叫博客)，通过他的帮忙，博客之路开始……
 博客历程
