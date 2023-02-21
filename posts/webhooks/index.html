@@ -39,48 +39,58 @@
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 查看git公钥</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=l>cat ~/.ssh/id_rsa.pub</span><span class=w>
-</span></span></span></code></pre></div><p><strong>3.</strong> 添加公钥到到Github：头像&ndash;Settings&ndash;SSH and GPG keys&ndash;New SSH key</p><p><strong>4.</strong> 打开宝塔面板商店，安装WebHook插件&ndash;添加执行脚本 (复制以下代码)。其中"gitHttp为需同步的github仓库地址"，&ldquo;gh-pages"为仓库分支名称。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=c>#!/bin/bash</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>echo &#34;&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#输出当前时间</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>date --date=&#39;0 days ago&#39; &#34;+%Y-%m-%d %H:%M:%S&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>echo &#34;Start&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#判断宝塔WebHook参数是否存在</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>if [ ! -n &#34;$1&#34; ];</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>then </span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=l>echo &#34;param参数错误&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=l>echo &#34;End&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=l>exit</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>fi</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#git项目路径（$1是param后面的参数，指向你的服务器的目录）</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>gitPath=&#34;/www/wwwroot/$1&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#git 网址 (替换成你的git地址，ssh方式)</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>gitHttp=&#34;git@github.com:koobai/koobai.github.io.git&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w> 
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>echo &#34;Web站点路径：$gitPath&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w> 
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c>#判断项目路径是否存在</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>if [ -d &#34;$gitPath&#34; ]; then</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>cd $gitPath</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c>#判断是否存在git目录</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>if [ ! -d &#34;.git&#34; ]; then</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=l>echo &#34;在该目录下克隆 git&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=l>git clone $gitHttp gittemp</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=l>mv gittemp/.git .</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=l>rm -rf gittemp</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>fi</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c>#拉取最新的项目文件（此处为git拉取命令可根据需求自定义）</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c>#git reset --hard origin/gh-pages</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c>#git pull origin gh-pages</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>git fetch --all &amp;&amp; git reset --hard origin/gh-pages &amp;&amp; git pull</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c>#设置目录权限</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>chown -R www:www $gitPath</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>echo &#34;End&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>exit</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>else</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>echo &#34;该项目路径不存在&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>echo &#34;End&#34;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=l>exit</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>fi</span><span class=w>
+</span></span></span></code></pre></div><p><strong>3.</strong> 添加公钥到到Github：头像&ndash;Settings&ndash;SSH and GPG keys&ndash;New SSH key</p><p><strong>4.</strong> 打开宝塔面板商店，安装WebHook插件&ndash;添加执行脚本 (复制以下代码)。其中"gitHttp为需同步的github仓库地址"，&ldquo;gh-pages"为仓库分支名称。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=w>    </span><span class=c>#!/bin/bash</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>echo &#34;&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c>#输出当前时间</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>date --date=&#39;0 days ago&#39; &#34;+%Y-%m-%d %H:%M:%S&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>echo &#34;Start&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c>#git分支名称</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>branch=&#34;gh-pages&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c>#git项目路径</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>gitPath=&#34;/www/wwwroot/$1&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c>#git 仓库地址</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>gitHttp=&#34;git@github.com:koobai/koobai.github.io.git&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>echo &#34;Web站点路径：$gitPath&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c>#判断项目路径是否存在</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>if [ -d &#34;$gitPath&#34; ]; then</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>cd $gitPath</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c>#判断是否存在git目录</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>if [ ! -d &#34;.git&#34; ]; then</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=l>echo &#34;在该目录下克隆 git&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=l>sudo git clone $gitHttp gittemp </span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=l>sudo mv gittemp/.git .</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=l>sudo rm -rf gittemp</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>fi</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>echo &#34;拉取最新的项目文件&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c>#sudo git reset --hard origin/$branch</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>git remote add origin $gitHttp</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>git branch --set-upstream-to=origin/$branch $branch</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>sudo git reset --hard origin/$branch</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>sudo git pull $gitHttp  2&gt;&amp;1  </span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>echo &#34;设置目录权限&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>sudo chown -R www:www $gitPath</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>echo &#34;End&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>exit</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>else</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>echo &#34;该项目路径不存在&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=l>echo &#34;新建项目目录&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>mkdir $gitPath</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>cd $gitPath</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c>#判断是否存在git目录</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>if [ ! -d &#34;.git&#34; ]; then</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=l>echo &#34;在该目录下克隆 git&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=l>sudo git clone $gitHttp gittemp</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=l>sudo mv gittemp/.git .</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=l>sudo rm -rf gittemp</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>fi</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>echo &#34;拉取最新的项目文件&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c>#sudo git reset --hard origin/$branch</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>sudo git pull gitHttp 2&gt;&amp;1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>echo &#34;设置目录权限&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>sudo chown -R www:www $gitPath</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>echo &#34;End&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=l>exit</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=l>fi</span><span class=w>
 </span></span></span></code></pre></div><p><strong>5.</strong> 查看WebHook插件密钥，复制密钥地址。添加到Github需同步的仓库&ndash;Settings&ndash;Webhooks&ndash;Add webhook。其中Content type选择application/json。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>格式如：https://面板地址:面板端口/hook?access_key=密钥&amp;param=需同步到的目录名称
 </span></span></code></pre></div><p><strong>6.</strong> 初始化宝塔网站目录</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=nb>cd</span> 网站目录
 </span></span><span class=line><span class=cl>
