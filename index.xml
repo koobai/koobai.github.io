@@ -1,88 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World, Hello 2023 on 空白生活</title><link>https://koobai.com/</link><description>Recent content in Hello World, Hello 2023 on 空白生活</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 24 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://koobai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>智能家居使用主观感受</title><link>https://koobai.com/posts/smart_home/</link><pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/smart_home/</guid><description>2018年装修房子选灯具的时候，了解到智能家居。想着要不尝试看看，经过性价比、产品丰富度、入门简易度几个维度筛选下来，小米生态链的品牌最适合。到现在差不多四年多时间，米家里显示的设备88个，基本覆盖了日常使用设备，如：门锁、灯具、猫眼、摄像机、窗帘、扫地机、净水器、各类传感器等。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World, Hello 2023 on 空白生活</title><link>https://koobai.com/</link><description>Recent content in Hello World, Hello 2023 on 空白生活</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 24 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://koobai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>智能家居使用主观感受</title><link>https://koobai.com/smart_home_xiaomi/</link><pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/smart_home_xiaomi/</guid><description>2018 年装修房子选灯具的时候，了解到智能家居。想着要不尝试看看，经过性价比、产品丰富度、入门简易度几个维度筛选下来，小米生态链的品牌最适合。到现在差不多四年多时间，米家里显示的设备 88 个，基本覆盖了日常使用设备，如：门锁、灯具、猫眼、摄像机、窗帘、扫地机、净水器、各类传感器等。
 场景 智能设备最优的使用方式，是各个设备之间相互联动，而不是单一独立存在。自己分别设置了不同场景：如
-1.门锁开门，指定对应的灯具自动开灯。关门，指定全屋关灯，并开启摄像机、安全网关、禁用小爱同学。
-2.走入卫生间、厨房，自动开灯，5分钟之后，感知无人自动关灯。半夜走入卫生间、厨房，开启夜灯模式。
-3.早上窗帘自动打开，晚上自动关上。
-4.各种小爱同学口令，如：看电视，对应灯具自动关上，并打开氛围灯、电视。睡觉，关闭灯光，并打开夜灯。
-感受 解放双手双脚，怎么懒怎么来。一句小爱同学、一句嘿Siri随时听你的指令工作。再也不用因为忘记关灯或扫地问题，用石头剪子布来决定谁去关或扫，影响感情。也不用担心开门屋里一片漆黑、起床上厕所摸黑，需要找开关。
+门锁开门，指定对应的灯具自动开灯。关门，指定全屋关灯，并开启摄像机、安全网关、禁用小爱同学。 走入卫生间、厨房，自动开灯，5 分钟之后，感知无人自动关灯。半夜走入卫生间、厨房，开启夜灯模式。 早上窗帘自动打开，晚上自动关上。 各种小爱同学口令，如：看电视，对应灯具自动关上，并打开氛围灯、电视。睡觉，关闭灯光，并打开夜灯。 感受 解放双手双脚，怎么懒怎么来。一句小爱同学、一句嘿 Siri 随时听你的指令工作。再也不用因为忘记关灯或扫地问题，用石头剪子布来决定谁去关或扫，影响感情。也不用担心开门屋里一片漆黑、起床上厕所摸黑，需要找开关。
 设备稳定性整体不错，偶尔几个掉线之后只需手动关开一下，就会自动连接上。当然日常使用也存在一些问题：
-1.小爱同学答非所问，你喊它开客厅灯，它回答好的，马上播放xxx歌曲。
-2.门锁开门不自动执行场景设置，时有时无，到目前没搞明白什么原因。
-3.设备基本上都必须连小米服务器才可使用，无网络或小米服务器出现问题，就全屋瘫痪。
-4.上厕所或洗澡容易自动关灯，人体传感器精度不够，需要换人在传感器。
-总结 使用的产品当中也会有为了智能而智能，并不实用，如晾衣架，还是实体开关升降符合使用预期。
+小爱同学答非所问，你喊它开客厅灯，它回答好的，马上播放 xxx 歌曲。 门锁开门不自动执行场景设置，时有时无，到目前没搞明白什么原因。 设备基本上都必须连小米服务器才可使用，无网络或小米服务器出现问题，就全屋瘫痪。 上厕所或洗澡容易自动关灯，人体传感器精度不够，需要换人在传感器。 总结 使用的产品当中也会有为了智能而智能，并不实用，如晾衣架，还是实体开关升降符合使用预期。
 设备几年使用下来，给生活带来了便利之外也确实提升了小幸福感。特别是一些有意思的产品，如智能马桶盖，除了改变日常清洁屁屁问题之外，冬天坐上去那个暖和的感受，再也不用一哆嗦。智能垃圾桶，自动打包自动套空袋，非常方便。但是不是必须，譬如有人说自己拖地更干净，那就仁者见仁智者见智。
-2023年，可选的品牌、品类越来越丰富，技术也越来越成熟，如离线使用、Apple的Matter标准等等，值得尝试。</description></item><item><title>Github Action 自动构建 Hugo, 并通过 Webhook 同步到宝塔指定目录</title><link>https://koobai.com/posts/webhooks/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/webhooks/</guid><description>折腾博客的乐趣就是不停的折腾，一个评论插件就搞来搞去的，为此还特意买了轻量服务器，索性也把 Hugo 搬过去。只是原先自动同步到腾讯 COS 就不可用，而且域名还指定了境外访问路径，导致更新博客的流程变得非常复杂。最终通过 Google，总算解决：本地提交 hugo 源码到 Github，自动触发构建并同步到宝塔指定的网站目录。
+2023 年，可选的品牌、品类越来越丰富，技术也越来越成熟，如离线使用、Apple 的 Matter 标准等等，值得尝试。</description></item><item><title>Github Action 自动构建 Hugo, 并通过 Webhook 同步到宝塔指定目录</title><link>https://koobai.com/hugo_action_webhooks/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hugo_action_webhooks/</guid><description>折腾博客的乐趣就是不停的折腾，一个评论插件就搞来搞去的，为此还特意买了轻量服务器，索性也把 Hugo 搬过去。只是原先自动同步到腾讯 COS 就不可用，而且域名还指定了境外访问路径，导致更新博客的流程变得非常复杂。最终通过 Google，总算解决：本地提交 hugo 源码到 Github，自动触发构建并同步到宝塔指定的网站目录。
 部署步骤流程记录下：
 1. 在 Github 的 Hugo 源码仓库根目录，新建&amp;quot;.github/workflows/xxx.yml 文件，复制以下代码。作用：借助 Github Action 实现自动构建，并同步到另外一个仓库。其中 &amp;ldquo;PERSONAL_TOKEN&amp;rdquo; 为另外仓库的访问密钥；&amp;ldquo;external_repository&amp;rdquo; 为另外仓库地址。
-name: Githubblog on: workflow_dispatch: push: branches: - main jobs: deploy: runs-on: ubuntu-latest steps: - uses: actions/checkout@v3 with: submodules: true fetch-depth: 0 - name: Setup Hugo uses: peaceiris/actions-hugo@v2 with: hugo-version: &amp;#39;latest&amp;#39; extended: true - name: Build run: hugo --minify - name: Deploy uses: peaceiris/actions-gh-pages@v3 with: personal_token: ${{ secrets.PERSONAL_TOKEN }} external_repository: koobai/koobai.</description></item><item><title>唠叨</title><link>https://koobai.com/memos/</link><pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/memos/</guid><description/></item><item><title>Apple TV 4K (第二代) 使用体验</title><link>https://koobai.com/posts/appletv/</link><pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/appletv/</guid><description>购买背景 自己喜欢观影，为了方便直接使用奈飞 (Netflix)，在2020年时购入了 Google TV，一直使用得不错。直到买了群晖，在折腾影视串流的过程中，发现大家都推荐 Infuse 这款软件。一番了解，确实很不错，支持市面上所有的视频、音频格式，年订阅9.9美元，最主要的是串流的海报墙太美了～～。唯一的缺陷就是只支持 Apple 生态，其他都好说，本身电脑手机Pad都是Apple，但最主要的电视观影工具 Google TV 使不上呀。纠结很久，实在受不了Infuse的诱惑，于是淘宝了一台 Apple TV 4k (第 2 代)。
-连接方式 Apple TV 连 Soundba 音响ARC接口 &amp;gt; Soundba 连电视eARC接口，这样就可以，画面由电视显示、声音由Soundba输出。
-使用感受 2022年1月3号买的，目前也使用了一年多时间，整体感受就是一分钱一分货，比之前的 Google TV 不管是流畅度、系统美观度，完全都不是一个量级。特别喜欢铝制一体成型的遥控器，非常有质感，就是冬天使用冰手。
-由于家里的智能设备也通过HomeKit控制，Apple TV 插着直流电，也就充当作为智能中枢使用。另外有台电视不支持杜比视界，可以使用机器配合iPhone给电视屏幕校色。
-目前TV中，常用的App：
-1. Netflix 买这些盒子最初的需求就是为了能使用Netflix，喜欢它的一点：剧集基本上都是一次性放出，看起来非常爽。每年都有那么几部好看的，如：暗黑、怪奇物语、风骚律师、纸房子，最近很火的黑暗荣耀。但每个月的订阅费确实不便宜，咬牙坚持几个月后，上了合租车。
-2. Youtube 关注了自己喜欢的几个频道，在电视上看还是很爽的，特别是订阅了会员之后，无广告。之前印度区一个月也就6块钱，最近开始涨价，再下去可能又得找合租车了。
-3. Infuse 买 Apple TV 就是因为它。通过WebDAV的方式，串联起Docker应用Alist，观影起来确实方便。到期之后，又订阅了一年，只能说Apple生态必备。
-4. Synology Photos 群晖此应用最近才上架Apple TV，现在各个终端设备齐全了，一家人坐在电视前浏览照片还是很爽的。不过浏览视频的时候，需要在软件设置中开启HTTP播放，否则无法浏览。
-5. Cheers Bilibili第三方客户端，目前可加入作者的TestFlight。自己很少看Bilibili，一般是找什么教程的时候，上去搜索下。
-另外还有HBOMAX、Disnep+、Apple TV应用，但都必须得订阅，全部加一起还是不少费用，所以直接通过Alist串流阿里云盘观看自己想看的。
-总结 由于自己喜欢观影，使用下来，这笔投资还是很划算。而且此类设备可多年不更新，所以性价比一下子就上来了。目前唯一的痛点就是，观看国内的爱奇艺、腾讯、优酷得退回电视系统，使用体验的割裂感就很强了，当然这个跟Apple TV没关系。
-当时买的是64G版本，也不知道怎么想的，按照现在的使用情景，完全没必要，32足已。</description></item><item><title>Synology 群晖 DS920+ 使用之旅</title><link>https://koobai.com/posts/synology/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/synology/</guid><description>购买过程 记不清是从什么时候开始了解NAS的，2021年4月买过一台群晖DS220+，使用几天发现折腾起来非常麻烦，直接给退了。时间来到2021年末，了解到极空间Z4，于是买回来试试，发现系统极其易用，非常喜欢。但没用几天，品牌宣布发布新款。。。，于是退了老款，等新款发售。上架之后，第一时间下单，不知为何拷贝外接硬盘内容会断连，联系品牌工程师，一番测试也无法解决，只能选择退货。京东填写退货理由是质量问题，品牌售后联系说只能选七天无理由退货，如果选择质量问题，必须退回厂里先检测，无问题就原路返回有问题就给退换。。。。京东使用了这么多年，第一次遇到品牌这种操作，一下子对极空间的好感度降至零点，退了之后就不考虑了。
-回到重新选择NAS上，了解了下威联通，性价比不错，但系统界面实在是无法欣赏，只能放弃。最后好像能选的品牌也就群晖了，基于一步到位原则，咬咬牙直接在淘宝授权商购自一台DS920+～～
-周边搭配 机器到位，对应的搭配组合：1.送的一条4g内存、一套防尘罩。2.三块希捷酷狼4T硬盘。3.两条三星250g SSD。4.山特850 UPS不间断电源。
-折腾之旅 准备就绪，经过一年多的折腾及稳定运行使用，满足了自己需求：数据备份、影视存储。目前主要使用的套件：
-1. 存储管理器 三块硬盘使用逻辑：两块组Raid 1，一块Basic。重要数据存储在Raid上；极为重要数据，再通过Hyper Backup套件定期自动备份到Basic硬盘上，再定期备份到外置硬盘。影视、mac系统备份，存储到Basic硬盘上。
-两条ssd,作为Raid 1的读写缓存。
-2. Synology Drive 群晖的核心套件。电脑中日常工作存储文件夹通过Synology Drive连接，保存修改的同时自动同步备份到群晖。目前使用的笔记类应用也是选择直接存储本地的，这样就能实时备份到群晖，如：Typora、妙言。再通过WebDAV方式连接访问，以供其他终端设备显示。
-3. Synology Photos 相册套件，跟Eileen两个人的手机，实时自动备份。套件的共享空间功能，能实时相互分享喜欢的照片。整体使用起来跟系统相册应用没什么差别。
-4. File Station 这好像没什么说的，类似于mac下的访达、win下的我的电脑，必用套件。
-5. 迅雷 只要你是会员，下载速度还是杠杠的，有些资源电脑版本无法下载，但套件能下～～。很多人会用PD、PT，然后通过Docker应用自动触发下载，发现自己平常也用不上。
-6. Docker 使用NAS前不知道什么是Docker，使用之后，只能说没了它，乐趣要少一大半～～目前使用的应用为 4 个：
-1. Alist 官方介绍：一个支持多种存储的文件列表程序。自己使用主要的作用是影视中转站：先把资源存储到阿里云盘 &amp;gt; Alist连接阿里云盘 &amp;gt; Infuse通过WebDAV方式连接Alist，之后就愉快的观影。
-2. Ddns-go 由于运营商的公网IP会实时变化，通过它可自动获取自己的公网IP，并解析到对应的域名上。外网访问NAS必备。
-3. Homeassistant 家里接入了不少小米系的智能设备，日常除了使用米家控制之外，可通过Homeassistant接入HomeKit。如果是苹果的全家桶用户，使用起来非常方便，特别是打开app的速度比米家快了不知道有多少。
-4. Vaultwarden 密码管理工具，Bitwarden的轻量应用。数据存储本地，全平台使用，再也不用记该死的密码了。
-总结 1.机器是真吸灰尘，放置环境为电视柜，在有防尘网的前提下，也必须是几个月停机清理一次。
-2.硬盘运行的炒豆子声音，可能因为硬盘容量小、转速不高、机器下面也垫了缓存垫，且在有门隔绝的前提下，基本上可以忽略不计。
-3.是不是应该使用四盘位，自己使用的情况看，发现是性能过剩了，220其实已满足需求。
-一年多使用下来，机器很满意。但目前市场上NAS品牌越来越多，如华为、绿联等，以群晖的高售价低配置，曾经“买系统送机器”的流传打趣，性价比越来越低，升级款923，还是万年不变的千兆网口～～～</description></item><item><title>观影</title><link>https://koobai.com/movies/</link><pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/movies/</guid><description/></item><item><title>Hugo主题实现自适应布局, 及自定义字体</title><link>https://koobai.com/posts/responsive/</link><pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/responsive/</guid><description>做事情的三分钟热度继续中，完善了博客的归档、标签云、平常观看的影视页面及文章页评论、标签等功能。由于当下移动设备为我们主要的浏览窗口，所以页面需考虑在对应的终端设备中实际的浏览体验。
+name: Githubblog on: workflow_dispatch: push: branches: - main jobs: deploy: runs-on: ubuntu-latest steps: - uses: actions/checkout@v3 with: submodules: true fetch-depth: 0 - name: Setup Hugo uses: peaceiris/actions-hugo@v2 with: hugo-version: &amp;#39;latest&amp;#39; extended: true - name: Build run: hugo --minify - name: Deploy uses: peaceiris/actions-gh-pages@v3 with: personal_token: ${{ secrets.</description></item><item><title>唠叨</title><link>https://koobai.com/memos/</link><pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/memos/</guid><description/></item><item><title>Apple TV 4K (第二代) 使用体验</title><link>https://koobai.com/apple_tv/</link><pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/apple_tv/</guid><description>自己喜欢观影，为了方便直接使用奈飞 (Netflix)，在 2020 年时购入了 Google TV，一直使用得不错。直到买了群晖，在折腾影视串流的过程中，发现大家都推荐 Infuse 这款软件。一番了解，确实很不错，支持市面上所有的视频、音频格式，年订阅 9.9 美元，最主要的是串流的海报墙太美了～～。唯一的缺陷就是只支持 Apple 生态，其他都好说，本身电脑手机 Pad 都是 Apple，但最主要的电视观影工具 Google TV 使不上呀。纠结很久，实在受不了 Infuse 的诱惑，于是淘宝了一台 Apple TV 4k (第 2 代)。
+连接方式 Apple TV 连 Soundba 音响 ARC 接口 &amp;gt; Soundba 连电视 eARC 接口，这样就可以，画面由电视显示、声音由 Soundba 输出。
+使用感受 2022 年 1 月 3 号买的，目前也使用了一年多时间，整体感受就是一分钱一分货，比之前的 Google TV 不管是流畅度、系统美观度，完全都不是一个量级。特别喜欢铝制一体成型的遥控器，非常有质感，就是冬天使用冰手。
+由于家里的智能设备也通过 HomeKit 控制，Apple TV 插着直流电，也就充当作为智能中枢使用。另外有台电视不支持杜比视界，可以使用机器配合 iPhone 给电视屏幕校色。
+目前 TV 中，常用的 App： 1. Netflix 买这些盒子最初的需求就是为了能使用 Netflix，喜欢它的一点：剧集基本上都是一次性放出，看起来非常爽。每年都有那么几部好看的，如：暗黑、怪奇物语、风骚律师、纸房子，最近很火的黑暗荣耀。但每个月的订阅费确实不便宜，咬牙坚持几个月后，上了合租车。
+2. Youtube 关注了自己喜欢的几个频道，在电视上看还是很爽的，特别是订阅了会员之后，无广告。之前印度区一个月也就 6 块钱，最近开始涨价，再下去可能又得找合租车了。</description></item><item><title>Synology 群晖 DS920+ 使用之旅</title><link>https://koobai.com/synology_ds920/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/synology_ds920/</guid><description>记不清是从什么时候开始了解 NAS 的，2021 年 4 月买过一台群晖 DS220+，使用几天发现折腾起来非常麻烦，直接给退了。时间来到 2021 年末，了解到极空间 Z4，于是买回来试试，发现系统极其易用，非常喜欢。但没用几天，品牌宣布发布新款。。。，于是退了老款，等新款发售。上架之后，第一时间下单，不知为何拷贝外接硬盘内容会断连，联系品牌工程师，一番测试也无法解决，只能选择退货。京东填写退货理由是质量问题，品牌售后联系说只能选七天无理由退货，如果选择质量问题，必须退回厂里先检测，无问题就原路返回有问题就给退换。。。。京东使用了这么多年，第一次遇到品牌这种操作，一下子对极空间的好感度降至零点，退了之后就不考虑了。
+回到重新选择 NAS 上，了解了下威联通，性价比不错，但系统界面实在是无法欣赏，只能放弃。最后好像能选的品牌也就群晖了，基于一步到位原则，咬咬牙直接在淘宝授权商购自一台 DS920+～～
+周边搭配 机器到位，对应的搭配组合：1.送的一条 4g 内存、一套防尘罩。2.三块希捷酷狼 4T 硬盘。3.两条三星 250g SSD。4.山特 850 UPS 不间断电源。
+折腾之旅 准备就绪，经过一年多的折腾及稳定运行使用，满足了自己需求：数据备份、影视存储。目前主要使用的套件： 1. 存储管理器 三块硬盘使用逻辑：两块组 Raid 1，一块 Basic。重要数据存储在 Raid 上；极为重要数据，再通过 Hyper Backup 套件定期自动备份到 Basic 硬盘上，再定期备份到外置硬盘。影视、mac 系统备份，存储到 Basic 硬盘上。
+两条 ssd,作为 Raid 1 的读写缓存。
+2. Synology Drive 群晖的核心套件。电脑中日常工作存储文件夹通过 Synology Drive 连接，保存修改的同时自动同步备份到群晖。目前使用的笔记类应用也是选择直接存储本地的，这样就能实时备份到群晖，如：Typora、妙言。再通过 WebDAV 方式连接访问，以供其他终端设备显示。
+3. Synology Photos 相册套件，跟 Eileen 两个人的手机，实时自动备份。套件的共享空间功能，能实时相互分享喜欢的照片。整体使用起来跟系统相册应用没什么差别。
+4. File Station 这好像没什么说的，类似于 mac 下的访达、win 下的我的电脑，必用套件。</description></item><item><title>观影</title><link>https://koobai.com/movies/</link><pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/movies/</guid><description/></item><item><title>Hugo主题实现自适应布局, 及自定义字体</title><link>https://koobai.com/hugo_responsive_font/</link><pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hugo_responsive_font/</guid><description>做事情的三分钟热度继续中，完善了博客的归档、标签云、平常观看的影视页面及文章页评论、标签等功能。由于当下移动设备为我们主要的浏览窗口，所以页面需考虑在对应的终端设备中实际的浏览体验。
 简单直接的方法，在页面样式表中添加@media，并在对应的尺寸范围中完善所需的样式：
-@media (max-width:700px){ /* 浏览器宽度尺寸小于700所呈现的样式 */ } @media screen and (min-width:700px) and (max-width:900px){ /* 浏览器宽度尺寸大于700小于900所呈现的样式 */ } @media (min-width:900px){ /* 浏览器宽度尺寸大于700所呈现的样式 */ } /* 根据每个页面实际的呈现需要，调整尺寸或自适应的分段需求 */ 详细参数及解释参考：利用@media screen实现网页布局的自适应
+@media (max-width:700px){ /* 浏览器宽度尺寸小于700所呈现的样式 */ } @media screen and (min-width:700px) and (max-width:900px){ /* 浏览器宽度尺寸大于700小于900所呈现的样式 */ } @media (min-width:900px){ /* 浏览器宽度尺寸大于700所呈现的样式 */ } /* 根据每个页面实际的呈现需要，调整尺寸或自适应的分段需求 */ 详细参数及解释参考：利用@media screen 实现网页布局的自适应
 扩展 之前文章中提到标题采用了&amp;quot;得意黑&amp;quot;开源字体，记录下如何自定义字体，在样式文件中添加：
 @font-face { font-family: SmileySans; /* 名称自定义 */ src: url(&amp;#39;../fonts/SmileySans-Oblique.ttf.woff2&amp;#39;) format(&amp;#39;woff2&amp;#39;); /* 建议采用woff2格式，以降低容量大小，提高加载速度 */ } 之后在需要调用此字体的样式文件中直接使用:
-body { font-family: SmileySans; } 结尾 博客所需的，整体折腾得差不多了，过程很有趣及兴奋，就连大年三十都在乐此不疲的折腾着～～。随着这个年也已过完，接下来的重点也是2023年重点，努力挣钱～挣钱～～挣钱～～～加油。</description></item><item><title>日志归档</title><link>https://koobai.com/archives/</link><pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/archives/</guid><description/></item><item><title>Hugo主题添加暗黑(夜间)模式, 并自动切换</title><link>https://koobai.com/posts/dark/</link><pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/dark/</guid><description>继续完善博客主题风格，折腾过程，备份记录留档。由于自己已习惯把终端设备外观设置成自动切换浅色或深色模式，为了夜间浏览体验，博客应该支持暗黑(夜间)模式。
-以hugo关键词搜索主题应该怎么适配，相关资料很少，尝试到绝望之际，换成了英文关键词，最终Atanas Yonkov的&amp;quot;Adding Dark Mode to Hugo&amp;ldquo;拯救了自己，根据其教程，添加成功。虽不完美，但已实现，纠结两个问题：
-1.暗黑模式下，点击链接加载都会白一下再变暗。
-2.不会根据终端设备模式自动切换，需要手动点击。
-尝试搜索解决，无果。之后发现WorkPlusFE&amp;rsquo;s Blog的&amp;rdquo;Dark Mode&amp;ldquo;教程，又是一番折腾，最终完美解决。最简单直接方式：在hugo样式文件中（如：style.scss）添加
+body { font-family: SmileySans; } 结尾 博客所需的，整体折腾得差不多了，过程很有趣及兴奋，就连大年三十都在乐此不疲的折腾着～～。随着这个年也已过完，接下来的重点也是 2023 年重点，努力挣钱～挣钱～～挣钱～～～加油。</description></item><item><title>日志归档</title><link>https://koobai.com/archives/</link><pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/archives/</guid><description/></item><item><title>Hugo主题添加暗黑(夜间)模式, 并自动切换</title><link>https://koobai.com/hugo_dark/</link><pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hugo_dark/</guid><description>继续完善博客主题风格，折腾过程，备份记录留档。由于自己已习惯把终端设备外观设置成自动切换浅色或深色模式，为了夜间浏览体验，博客应该支持暗黑(夜间)模式。
+以 hugo 关键词搜索主题应该怎么适配，相关资料很少，尝试到绝望之际，换成了英文关键词，最终 Atanas Yonkov 的&amp;quot;Adding Dark Mode to Hugo&amp;ldquo;拯救了自己，根据其教程，添加成功。虽不完美，但已实现，纠结两个问题：
+暗黑模式下，点击链接加载都会白一下再变暗。 不会根据终端设备模式自动切换，需要手动点击。 尝试搜索解决，无果。之后发现 WorkPlusFE&amp;rsquo;s Blog 的&amp;rdquo;Dark Mode&amp;ldquo;教程，又是一番折腾，最终完美解决。最简单直接方式：在 hugo 样式文件中（如：style.scss）添加
 @media (prefers-color-scheme: dark) { /* 暗黑模式下css样式, 如: */ body { background: #1A1718; } } 完善暗黑模式下的样式属性之后，终端设备在深色模式下会自动调用渲染主题暗黑模式下的样式表，反之浅色模式下就调用默认样式。
 扩展 当然如果要做好暗黑模式，并不是简单的反黑白，需要不断尝试样式的各个配色方案，以寻求夜间浏览的实际体验。不过图片可以采用降低透明度的方式来缓解夜间过亮刺眼的问题：
-@media (prefers-color-scheme: dark) { img { filter: brightness(0.8) contrast(1.2); } } 感悟 由于自己并不懂技术，折腾博客过程中，想实现或者解决某一想法或问题时，都需要通过搜索引擎查阅大量的资料，花大把时间，最终才能勉强得以解决或者继续无解。这就是折腾过程中的乐趣，特别是实现或解决成功的那个兴奋欣慰感～～</description></item><item><title>Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存</title><link>https://koobai.com/posts/tencentcos/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/tencentcos/</guid><description>博客逐步搭建完善，更新了日常使用的App、硬件页面。博客样式标题采用了&amp;quot;得意黑&amp;ldquo;开源字体。把二级域名改成一级，过程中发现Cloudflare Pages如果要绑定一级，须把域名的DNS服务器解析过去。解析之后，自己的nas访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的COS对象存储配合内容分发网络CDN搭建(主要它的cosbrowser界面是经过设计的ᵔ◡ᵔ；客服也很负责，咨询问题会电话打过来详细教你如何操作)。
-在了解部署过程中发现Cyrus&amp;rsquo;s Blog写的&amp;rdquo;自动构建Hugo博客部署至腾讯云对象存储COS并刷新CDN&amp;ldquo;教程，一番折腾，完美。感谢作者。
-备份记录下过程: (详细的注释可查看Cyrus&amp;rsquo;s Blog)
-准备工作： 1.到腾讯云访问管理——访问密钥——API密钥管理中，新建一个账户：访问方式改为&amp;quot;编程访问&amp;rdquo;，用户权限添加&amp;quot;QcloudCOSDataFullControl、 QcloudCDNFullAccess&amp;quot;。完成之后将生成的SecretId、SecretKey复制保存。
-2.到Github新建一个仓库(私有公共都行)，把自己hugo生成的站点源文件(不是public下文件)同步过去。
-3.在刚创建的仓库——Settings——Secrets and variables——Actions，新建SecretId、SecretKey、Bucket、 Region四个密钥。其中SecretId、SecretKey为上面复制保存的，Bucket(存储桶名称)、 Region(所属地域 )在COS中存储桶列表中获取。
-部署: 1.在Github仓库根目录，新建&amp;quot;.github/workflows&amp;quot;文件夹，并新建xxx.yml文件，复制以下代码到文件里。作用：借助Github Action实现自动部署。
-name: Build and deploy # 自动触发构建 on: push: branches: - main # 构建hugo及生产静态页面 jobs: deploy: runs-on: ubuntu-latest steps: - uses: actions/checkout@v3 with: submodules: true fetch-depth: 0 - name: Setup Hugo uses: peaceiris/actions-hugo@v2 with: hugo-version: &amp;#39;latest&amp;#39; extended: true - name: Build run: hugo --minify # 上传到腾讯COS存储桶 - name: Setup Python uses: actions/setup-python@v4 with: python-version: 3.</description></item><item><title>好物</title><link>https://koobai.com/hardware/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hardware/</guid><description/></item><item><title>Apps</title><link>https://koobai.com/apps/</link><pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/apps/</guid><description/></item><item><title>十年弹指一挥间</title><link>https://koobai.com/posts/time/</link><pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/time/</guid><description>最近脑子一直在想，是不是该搭个个人站，以展示日常工作项目，方便让潜在的公司了解，从而快速建立沟通。想着想着就往博客路线走了，离上次2012年搭建博客，时间过去了10年。细想这10年少了博客的日常记录，是少了点什么。虽然当下，能记录的平台、工具多不胜数，但博客始终是记录的动力。
-于是，了解了一圈搭建工具，最终使用Hugo，搭配GitHub &amp;amp; Cloudflare来实现。搭建过程中，似乎找回了，十年前折腾博客的乐趣：选主题然后修改成自己中意的样子，很满足。
+@media (prefers-color-scheme: dark) { img { filter: brightness(0.8) contrast(1.2); } } 感悟 由于自己并不懂技术，折腾博客过程中，想实现或者解决某一想法或问题时，都需要通过搜索引擎查阅大量的资料，花大把时间，最终才能勉强得以解决或者继续无解。这就是折腾过程中的乐趣，特别是实现或解决成功的那个兴奋欣慰感～～</description></item><item><title>Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存</title><link>https://koobai.com/hugo_action_tencentcos/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hugo_action_tencentcos/</guid><description>博客逐步搭建完善，更新了日常使用的App、硬件页面。博客样式标题采用了&amp;quot;得意黑&amp;ldquo;开源字体。把二级域名改成一级，过程中发现 Cloudflare Pages 如果要绑定一级，须把域名的 DNS 服务器解析过去。解析之后，自己的 nas 访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel 可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的 COS 对象存储配合内容分发网络 CDN 搭建(主要它的 cosbrowser 界面是经过设计的 ᵔ◡ᵔ；客服也很负责，咨询问题会电话打过来详细教你如何操作)。
+在了解部署过程中发现 Cyrus&amp;rsquo;s Blog 写的&amp;rdquo;自动构建 Hugo 博客部署至腾讯云对象存储 COS 并刷新 CDN&amp;ldquo;教程，一番折腾，完美。感谢作者。
+备份记录下过程: (详细的注释可查看 Cyrus&amp;rsquo;s Blog)
+准备工作： 到腾讯云访问管理——访问密钥——API 密钥管理中，新建一个账户：访问方式改为&amp;quot;编程访问&amp;rdquo;，用户权限添加&amp;quot;QcloudCOSDataFullControl、 QcloudCDNFullAccess&amp;quot;。完成之后将生成的 SecretId、SecretKey 复制保存。 到 Github 新建一个仓库(私有公共都行)，把自己 hugo 生成的站点源文件(不是 public 下文件)同步过去。 在刚创建的仓库——Settings——Secrets and variables——Actions，新建 SecretId、SecretKey、Bucket、 Region 四个密钥。其中 SecretId、SecretKey 为上面复制保存的，Bucket(存储桶名称)、 Region(所属地域 )在 COS 中存储桶列表中获取。 部署: 在 Github 仓库根目录，新建&amp;quot;.github/workflows&amp;quot;文件夹，并新建 xxx.yml 文件，复制以下代码到文件里。作用：借助 Github Action 实现自动部署。 name: Build and deploy # 自动触发构建 on: push: branches: - main # 构建hugo及生产静态页面 jobs: deploy: runs-on: ubuntu-latest steps: - uses: actions/checkout@v3 with: submodules: true fetch-depth: 0 - name: Setup Hugo uses: peaceiris/actions-hugo@v2 with: hugo-version: &amp;#39;latest&amp;#39; extended: true - name: Build run: hugo --minify # 上传到腾讯COS存储桶 - name: Setup Python uses: actions/setup-python@v4 with: python-version: 3.</description></item><item><title>好物</title><link>https://koobai.com/hardware/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hardware/</guid><description/></item><item><title>Apps</title><link>https://koobai.com/apps/</link><pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/apps/</guid><description/></item><item><title>十年弹指一挥间</title><link>https://koobai.com/time/</link><pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/time/</guid><description>最近脑子一直在想，是不是该搭个个人站，以展示日常工作项目，方便让潜在的公司了解，从而快速建立沟通。想着想着就往博客路线走了，离上次 2012 年搭建博客，时间过去了 10 年。细想这 10 年少了博客的日常记录，是少了点什么。虽然当下，能记录的平台、工具多不胜数，但博客始终是记录的动力。
+于是，了解了一圈搭建工具，最终使用 Hugo，搭配 GitHub &amp;amp; Cloudflare来实现。搭建过程中，似乎找回了，十年前折腾博客的乐趣：选主题然后修改成自己中意的样子，很满足。
 既然，博客已搭建，定位还是日常的生活记录（搭建过程中，翻出以前的博客备份记录，看着每篇文字，了解彼时写的感受，嗯，这应该就是记录的意义）。同时打算分享下：日常使用的软件、平常观看的影视、喜欢折腾的物品等。
-十年间个人的变化，体重从一个量级跃升到另外好几个量级，头发从中间快速的退去，到干脆剃光。之前2013年有篇博客记录Eileen刚怀孕几个月，初为父母的心理活动，到今天，女儿已9周岁多，三年级了都，时间确实是弹指一挥间。十年前，写着刚考完路试拿驾照，买车需要等到买房了才能想。十年后，不管好不好，目标至少都实现了。
-十年后，事业好像回到原点，又到了以前的状态。希望2023年借由新的博客开始，也是新事业的起点。。。。加油。。。</description></item><item><title>入手机械键盘路程 &amp; VIA改键注释备忘</title><link>https://koobai.com/posts/keyboard/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/posts/keyboard/</guid><description>入手机械键盘到客制化机械键盘路程 2021年03月在京东购买了京造K2（Keychron K2），这是第一把机械键盘。同年12月购买了sspai × Keychron 联名的K3，买它就单纯觉得白色好看。到此，客制化三个字也没听过，时间到了22年06月，sspai × Keychron 联名出了Q1，觉得配色也蛮好看，看介绍，才知道客制化概念，蛮有意思，于是买了这把Q1回来。
-入手之后，从完全不懂，到开始改轴下垫、贴美纹纸、换卫星轴、数据线定制、VIA自定义，还蛮有乐趣～
-7月份，见微博上有人说某个品牌一个小时卖了6000把键盘，这时才知道 Link 65。之后看到 ZOOM 65 R2开团，几个特性促成了上车： 蓝牙、65键 、带旋钮（用惯了Q1旋钮，非常方便）。
-谈不上入坑，对雨滴、麻将、HiFi等，也没感觉。更多是因为颜值～～
-VIA软件中的宏、any使用注释备忘： 完整的按键对照表参考文档：https://docs.qmk.fm/#/keycodes LGUI = 左cmd键，LALT = 左option键，LCTL = 左control键，LSFT = 左shift键 (缩写写法对应按键：G = CMD，A = Option，C = Control，S = Shift)
-Mac 系统下 VIA 软件中的 Win = Command，Alt = Option
-1. 宏使用(自定义按键) 左侧MACROS选项菜单为宏，宏对应0-15个按键，
-写法如：{KC_LGUI,KC_C}，意思为CMD+C 写法如2：{KC_LGUI,KC_LSFT,KC_4}，意思为cmd+shift+4
-2. any键使用(更自主的自定义按键) 文档：https://docs.qmk.fm/#/feature_advanced_keycodes 写法如：G(KC_C) 意思为CMD+C 写法如2：SGUI(kc_4) 意思为cmd+shift+4
-3. any特殊用法：键盘切换层 ( LAYER 0 1 2 3 ) 使用方法文档：https://docs.qmk.fm/#/feature_layers?id=switching-and-toggling-layers</description></item><item><title>简介</title><link>https://koobai.com/about/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/about/</guid><description>关于我 出生成长在江西婺源，大学主修服装设计专业。毕业之后跟Eileen到了浙江杭州。为了孩子上学，2019年成为新杭州人，定居杭州~~
-工作背景 15年以上设计相关工作经验，其中8年以上团队管理经验，并一手从0-1-N的完整搭建高达110人以上的设计团队。服务过线下传统行业（广告、服装公司）到线上互联网行业（国内社交、跨境电商公司）。并经历了从PC时代到移动互联网时代的蜕变。
-关于博客 05年QQ空间刚推出时，那个疯狂~~上班没事就折腾，下班回家，家里没电脑还想得慌。10月份买了电脑之后，热情逐步熄灭。开始通过朋友介绍买域名空间，什么都不懂，只知道搞几张图片放在页面上，后来Alpar说做博客(当时还不知道什么叫博客)，通过他的帮忙，博客之路开始……
-最初名称叫五色六彩(5slc.com)，06年底，域名空间到期之后，空白(koobai.net)开始诞生与延续……
-2008年12月14日，博客程序从PJBLOG转入WordPress
-2010年04月16日，博客全新启程…
-2010年08月18日，卷土重来，博客回归到单纯的记录生活
-2010年12月04日，博客地址启用为blog.koobai.com 2012年10月03日，博客与简素整合，以展示个人窗口为主，域名启用为koobai.com
-十年过去了，2023年01月06日，通过Hugo &amp;amp; 腾讯轻量服务器 &amp;amp; GitHub &amp;amp; Cloudflare 重新搭建博客。。。</description></item></channel></rss>
+十年间个人的变化，体重从一个量级跃升到另外好几个量级，头发从中间快速的退去，到干脆剃光。之前 2013 年有篇博客记录 Eileen 刚怀孕几个月，初为父母的心理活动，到今天，女儿已 9 周岁多，三年级了都，时间确实是弹指一挥间。十年前，写着刚考完路试拿驾照，买车需要等到买房了才能想。十年后，不管好不好，目标至少都实现了。
+十年后，事业好像回到原点，又到了以前的状态。希望 2023 年借由新的博客开始，也是新事业的起点。。。。加油。。。</description></item><item><title>入手机械键盘路程 &amp; VIA改键注释备忘</title><link>https://koobai.com/mechanical_keyboard/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/mechanical_keyboard/</guid><description>2021 年 03 月在京东购买了京造 K2（Keychron K2），这是第一把机械键盘。同年 12 月购买了 sspai × Keychron 联名的 K3，买它就单纯觉得白色好看。到此，客制化三个字也没听过，时间到了 22 年 06 月，sspai × Keychron 联名出了 Q1，觉得配色也蛮好看，看介绍，才知道客制化概念，蛮有意思，于是买了这把 Q1 回来。
+入手之后，从完全不懂，到开始改轴下垫、贴美纹纸、换卫星轴、数据线定制、VIA 自定义，还蛮有乐趣～
+7 月份，见微博上有人说某个品牌一个小时卖了 6000 把键盘，这时才知道 Link 65。之后看到 ZOOM 65 R2 开团，几个特性促成了上车： 蓝牙、65 键 、带旋钮（用惯了 Q1 旋钮，非常方便）。
+谈不上入坑，对雨滴、麻将、HiFi 等，也没感觉。更多是因为颜值～～
+VIA 软件中的宏、any 使用注释备忘： 完整的按键对照表参考文档：https://docs.qmk.fm/#/keycodes
+LGUI = 左 cmd 键，LALT = 左 option 键，LCTL = 左 control 键，LSFT = 左 shift 键
+(缩写写法对应按键：G = CMD，A = Option，C = Control，S = Shift)</description></item><item><title>简介</title><link>https://koobai.com/about/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/about/</guid><description>关于我 出生成长在江西婺源，大学主修服装设计专业。毕业之后跟 Eileen 到了浙江杭州。为了孩子上学，2019 年成为新杭州人，定居杭州~~
+工作背景 15 年以上设计相关工作经验，其中 8 年以上团队管理经验，并一手从 0-1-N 的完整搭建高达 110 人以上的设计团队。服务过线下传统行业（广告、服装公司）到线上互联网行业（国内社交、跨境电商公司）。并经历了从 PC 时代到移动互联网时代的蜕变。
+关于博客 05 年 QQ 空间刚推出时，那个疯狂~~ 上班没事就折腾，下班回家，家里没电脑还想得慌。10 月份买了电脑之后，热情逐步熄灭。开始通过朋友介绍买域名空间，什么都不懂，只知道搞几张图片放在页面上，后来 Alpar 说做博客(当时还不知道什么叫博客)，通过他的帮忙，博客之路开始……
+最初名称叫五色六彩(5slc.com)，06 年底，域名空间到期之后，空白(koobai.net)开始诞生与延续…
+2008 年 12 月 14 日，博客程序从 PJBLOG 转入 WordPress
+2010 年 04 月 16 日，博客全新启程…
+2010 年 08 月 18 日，卷土重来，博客回归到单纯的记录生活
+2010 年 12 月 04 日，博客地址启用为 blog.koobai.com
+2012 年 10 月 03 日，博客与简素整合，以展示个人窗口为主，域名启用为 koobai.com
+十年过去了，2023 年 01 月 06 日，通过 Hugo &amp;amp; 轻量服务器 &amp;amp; COS 重新搭建博客。。。</description></item></channel></rss>
