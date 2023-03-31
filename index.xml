@@ -56,13 +56,4 @@ body { font-family: SmileySans; } 结尾 博客所需的，整体折腾得差不
 7 月份，见微博上有人说某个品牌一个小时卖了 6000 把键盘，这时才知道 Link 65。之后看到 ZOOM 65 R2 开团，几个特性促成了上车： 蓝牙、65 键 、带旋钮（用惯了 Q1 旋钮，非常方便）。
 谈不上入坑，对雨滴、麻将、HiFi 等，也没感觉。更多是因为颜值～～ VIA 软件中的宏、any 使用注释备忘： 完整的按键对照表参考文档：https://docs.qmk.fm/#/keycodes
 LGUI = 左 cmd 键，LALT = 左 option 键，LCTL = 左 control 键，LSFT = 左 shift 键
-(缩写写法对应按键：G = CMD，A = Option，C = Control，S = Shift)</description></item><item><title>简介</title><link>https://koobai.com/about/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/about/</guid><description>关于我 出生成长在江西婺源，大学主修服装设计专业。毕业之后跟 Eileen 到了浙江杭州。为了孩子上学，2019 年成为新杭州人，定居杭州~~
-工作背景 15 年以上设计相关工作经验，其中 8 年以上团队管理经验，并一手从 0-1-N 的完整搭建高达 110 人以上的设计团队。服务过线下传统行业（广告、服装公司）到线上互联网行业（国内社交、跨境电商公司）。并经历了从 PC 时代到移动互联网时代的蜕变。
-关于博客 05 年 QQ 空间刚推出时，那个疯狂~~ 上班没事就折腾，下班回家，家里没电脑还想得慌。10 月份买了电脑之后，热情逐步熄灭。开始通过朋友介绍买域名空间，什么都不懂，只知道搞几张图片放在页面上，后来 Alpar 说做博客(当时还不知道什么叫博客)，通过他的帮忙，博客之路开始……
-最初名称叫五色六彩(5slc.com)，06 年底，域名空间到期之后，空白(koobai.net)开始诞生与延续…
-2008 年 12 月 14 日，博客程序从 PJBLOG 转入 WordPress
-2010 年 04 月 16 日，博客全新启程…
-2010 年 08 月 18 日，卷土重来，博客回归到单纯的记录生活
-2010 年 12 月 04 日，博客地址启用为 blog.koobai.com
-2012 年 10 月 03 日，博客与简素整合，以展示个人窗口为主，域名启用为 koobai.com
-十年过去了，2023 年 01 月 06 日，通过 Hugo &amp;amp; 轻量服务器 &amp;amp; COS 重新搭建博客。。。定位于工作生活记录、博客折腾, 同时分享下平常使用的软件、 观看的影视、喜欢折腾的物品等~~</description></item></channel></rss>
+(缩写写法对应按键：G = CMD，A = Option，C = Control，S = Shift)</description></item><item><title>简介</title><link>https://koobai.com/about/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/about/</guid><description/></item></channel></rss>
