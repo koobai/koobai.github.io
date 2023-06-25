@@ -51,8 +51,8 @@
 <p>游泳，之前没想着游泳，Eileen 说游泳是全身运动，更容易减肥，于是在家附近找了个游泳馆，尝试看看。说起游泳还是停留在小时候放牛时学的狗刨式游法，现在真正要游，其实完全不会。于是从看教学视频开始学，目前基本上每周去2-3次，现在要说有没有学会，嗯&hellip;&hellip;还没有，继续坚持努力。</p>
 <p>空腹，减肥最快的方式其实是不吃或者少吃，但咱也做不到也不健康。但零食、饮料、夜宵已完全戒掉，当然之前也不怎么吃。目前基本上保持晚上不吃晚餐，一天吃早中两餐，也算是遵循了816减肥方法。上周有几天没坚持住，继续坚持努力。</p>
 <p>当然更快更科学的减肥方式是，力量训练，一天摄入的热量少于消耗的热量自然而然就瘦了。还没打算这样做，一个是如果每次吃个东西还得查这个热量多少或者运动消耗了多少热量，生活太累了。另外力量训练，如果不请教练，自己瞎折腾器材，行不行？会不会容易受伤？教练太贵。还是先让身体动起来再说，看看能不能坚持，如果不能坚持一切都是白搭。
-<img loading="lazy" decoding="async" src="https://img.koobai.com/article/route.svg" alt="地图轨迹" class="img-hide" />
-在看 <a href="https://conge.livingwithfcs.org">conge</a> 日志过程中，发现有个跑步记录的页面很不错，通过他的分享知道了<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>开源项目，之后又发现<a href="https://github.com/ben-29/workouts_page">ben-29</a>基于<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>项目，增加了更多的运动类型。于是搭建了个“<a href="https://workouts.koobai.com">锻炼轨迹</a>”页面，算是从另外一个维度来督促自己坚持。</p>
+<img loading="lazy" decoding="async" src="https://img.koobai.com/article/route.svg" alt="地图轨迹" class="img-hide" /></p>
+<p>在看 <a href="https://conge.livingwithfcs.org">conge</a> 日志过程中，发现有个跑步记录的页面很不错，通过他的分享知道了<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>开源项目，之后又发现<a href="https://github.com/ben-29/workouts_page">ben-29</a>基于<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>项目，增加了更多的运动类型。于是搭建了个“<a href="https://workouts.koobai.com">锻炼轨迹</a>”页面，算是从另外一个维度来督促自己坚持。</p>
 <p>搭建过程中折腾了很久，把一些注意点记录下，留作备忘。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 绑定独立域名，修改gatsby-config文件：
 </span></span><span class="line"><span class="cl">pathPrefix: process.env.PATH_PREFIX || &#39;/&#39;,  
