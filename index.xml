@@ -60,43 +60,43 @@
 <p>在上海郊区很难发现有沪 A 的油车，两天下来在路上就见过一辆，新能源的到发现不少，很有意思。沪 C 是全国唯一全时段不能进上海市区的车牌，冷知识。有可能这次驾照要被扣分，因为快到路口要转弯的时候开到了公交专用道等红绿灯，没想到转弯道在旁边。另外这次驾车，感觉心有点急，有几次差点出事情，心平气和心平气和心平气和~~</p>
 ]]></content:encoded></item><item><title>图片通过 uPic 上传到 Github，然后自动同步到腾讯 COS / 又拍云 / B2</title><link>https://koobai.com/blogimg/</link><pubDate>Fri, 28 Jul 2023 16:18:05 +0800</pubDate><guid>https://koobai.com/blogimg/</guid><description>起因，自从把博客图片转移到又拍云之后，就通过 PicGo 直接上传，顺手也会再传一份到原先的多吉云，当是备份。本身这个流程没什么问题，但当看到斌仔说，他的方案是上传到 Githuab，再自动同步到各大存储桶。瞬间眼前一亮，我干嘛不这样呢，一次上传就行。目前博客样式或内容更新也是直接推送到Github，然后通过 Actions 自动构建及同步到各服务商，真是换了个场景就不知道了。折腾之路开始，记录留作备忘～</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/syncimg.svg" alt="图片通过 uPic 上传到 Github，然后自动同步到腾讯 COS / 又拍云 / B2" /><p>起因，自从把博客图片转移到又拍云之后，就通过 PicGo 直接上传，顺手也会再传一份到原先的多吉云，当是备份。本身这个流程没什么问题，但当看到斌仔说，他的方案是上传到 Github，再自动同步到各大存储桶。瞬间眼前一亮，我干嘛不这样呢，一次上传就行。目前博客样式或内容更新也是直接推送到Github，然后通过 Actions 自动构建及同步到各服务商，真是换了个场景就不知道了。折腾之路开始，记录留作备忘～</p>
 <p>找了一圈多吉云的 Actions 工作流，发现没有。<a href="https://eallion.com/">大大的小蜗牛</a>推荐了一个，试用了下，可能由于太久没更新或者自己不会使用，无效，找到原作者，沟通相对困难。决定放弃多吉云，转向腾讯云的 COS ，之前博文记录过<a href="/hugo_action_tencentcos/">Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存</a>，只需简单的修改下yml就行，其他具体设置参照之前的博文。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">name: Sync Tencent
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">name</span><span class="p">:</span> <span class="n">Sync</span> <span class="n">Tencent</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">on:
-</span></span><span class="line"><span class="cl">  workflow_dispatch:
-</span></span><span class="line"><span class="cl">  push:
-</span></span><span class="line"><span class="cl">    branches:
-</span></span><span class="line"><span class="cl">      - master
-</span></span><span class="line"><span class="cl">    paths:
-</span></span><span class="line"><span class="cl">      - &#39;koobaiblog/**&#39;  # 目录内容有变化执行工作流
+</span></span><span class="line"><span class="cl"><span class="n">on</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">workflow_dispatch</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">push</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">branches</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">master</span>
+</span></span><span class="line"><span class="cl">    <span class="n">paths</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="s1">&#39;koobaiblog/**&#39;</span>  <span class="c1"># 目录内容有变化执行工作流</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">jobs:
-</span></span><span class="line"><span class="cl">  deploy:
-</span></span><span class="line"><span class="cl">    runs-on: ubuntu-latest
-</span></span><span class="line"><span class="cl">    steps:
-</span></span><span class="line"><span class="cl">      - uses: actions/checkout@v3
-</span></span><span class="line"><span class="cl">        with:
-</span></span><span class="line"><span class="cl">          submodules: true
-</span></span><span class="line"><span class="cl">          fetch-depth: 0
+</span></span><span class="line"><span class="cl"><span class="n">jobs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">deploy</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+</span></span><span class="line"><span class="cl">    <span class="n">steps</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="err">@</span><span class="n">v3</span>
+</span></span><span class="line"><span class="cl">        <span class="n">with</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">submodules</span><span class="p">:</span> <span class="bp">true</span>
+</span></span><span class="line"><span class="cl">          <span class="n">fetch</span><span class="o">-</span><span class="n">depth</span><span class="p">:</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      - name: Setup Python
-</span></span><span class="line"><span class="cl">        uses: actions/setup-python@v4
-</span></span><span class="line"><span class="cl">        with:
-</span></span><span class="line"><span class="cl">          python-version: 3.9
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Setup</span> <span class="n">Python</span>
+</span></span><span class="line"><span class="cl">        <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">setup</span><span class="o">-</span><span class="n">python</span><span class="err">@</span><span class="n">v4</span>
+</span></span><span class="line"><span class="cl">        <span class="n">with</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">python</span><span class="o">-</span><span class="n">version</span><span class="p">:</span> <span class="mf">3.9</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      - name: Setup coscmd and sdk
-</span></span><span class="line"><span class="cl">        run: sudo pip install coscmd
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Setup</span> <span class="n">coscmd</span> <span class="ow">and</span> <span class="n">sdk</span>
+</span></span><span class="line"><span class="cl">        <span class="n">run</span><span class="p">:</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">coscmd</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      - name: Configure coscmd
-</span></span><span class="line"><span class="cl">        env:
-</span></span><span class="line"><span class="cl">          SECRET_ID: ${{ secrets.SecretId }}
-</span></span><span class="line"><span class="cl">          SECRET_KEY: ${{ secrets.SecretKey }}
-</span></span><span class="line"><span class="cl">          BUCKET: ${{ secrets.Bucket }}
-</span></span><span class="line"><span class="cl">          REGION: ${{ secrets.Region }}
-</span></span><span class="line"><span class="cl">        run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Configure</span> <span class="n">coscmd</span>
+</span></span><span class="line"><span class="cl">        <span class="n">env</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">SECRET_ID</span><span class="p">:</span> <span class="o">$</span><span class="p">{{</span> <span class="n">secrets</span><span class="o">.</span><span class="n">SecretId</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">          <span class="n">SECRET_KEY</span><span class="p">:</span> <span class="o">$</span><span class="p">{{</span> <span class="n">secrets</span><span class="o">.</span><span class="n">SecretKey</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">          <span class="n">BUCKET</span><span class="p">:</span> <span class="o">$</span><span class="p">{{</span> <span class="n">secrets</span><span class="o">.</span><span class="n">Bucket</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">          <span class="n">REGION</span><span class="p">:</span> <span class="o">$</span><span class="p">{{</span> <span class="n">secrets</span><span class="o">.</span><span class="n">Region</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">run</span><span class="p">:</span> <span class="n">coscmd</span> <span class="n">config</span> <span class="o">-</span><span class="n">a</span> <span class="o">$</span><span class="n">SECRET_ID</span> <span class="o">-</span><span class="n">s</span> <span class="o">$</span><span class="n">SECRET_KEY</span> <span class="o">-</span><span class="n">b</span> <span class="o">$</span><span class="n">BUCKET</span> <span class="o">-</span><span class="n">r</span> <span class="o">$</span><span class="n">REGION</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      - name: Upload to COS
-</span></span><span class="line"><span class="cl">        run: coscmd upload -rfs --delete koobaiblog/ /    # 需同步的本地目录及COS目录
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Upload</span> <span class="n">to</span> <span class="n">COS</span>
+</span></span><span class="line"><span class="cl">        <span class="n">run</span><span class="p">:</span> <span class="n">coscmd</span> <span class="n">upload</span> <span class="o">-</span><span class="n">rfs</span> <span class="o">--</span><span class="n">delete</span> <span class="n">koobaiblog</span><span class="o">/</span> <span class="o">/</span>    <span class="c1"># 需同步的本地目录及COS目录</span>
 </span></span></code></pre></div><p>搞定腾讯云之后，开始寻找又拍云的 Actions 工作流，<a href="https://www.wangdu.site/">斌仔</a>博文里有详细的教程，但试用之后觉得不够完美，一是文件无法增量更新，另外一个是无法保持文件一致性，譬如删除了 Gtihub 下的文件，远端无法同步删除。经过一番搜索，发现<a href="https://her-cat.com/">她和她的猫</a>博文中有说到增量更新及一致性问题，但没给出具体的脚本，抱着试试看的态度跟作者联系了下，把我的强迫症给完美解决，非常感谢作者。以下是yml，其中 <code>UPYUN_BUCKET</code>、<code>OPERATOR</code>、<code>OPERATOR_PASSWORD</code> 分别是又拍云的服务名称、操作员、操作员密码。详细使用可参考作者的 <a href="https://github.com/marketplace/actions/upyun-deployer">Github</a>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">name: Sync Upyun
 </span></span><span class="line"><span class="cl">
@@ -216,38 +216,38 @@
 <img loading="lazy" decoding="async" src="https://img.koobai.com/article/route.svg" alt="地图轨迹" class="img-hide" /></p>
 <p>在看 <a href="https://conge.livingwithfcs.org">conge</a> 日志过程中，发现有个跑步记录的页面很不错，通过他的分享知道了<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>开源项目，之后又发现<a href="https://github.com/ben-29/workouts_page">ben-29</a>基于<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>项目，增加了更多的运动类型。于是搭建了个“<a href="https://workouts.koobai.com">锻炼轨迹</a>”页面，算是从另外一个维度来督促自己坚持。</p>
 <p>搭建过程中折腾了很久，把一些注意点记录下，留作备忘。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 绑定独立域名，修改gatsby-config文件：
-</span></span><span class="line"><span class="cl">pathPrefix: process.env.PATH_PREFIX || &#39;/&#39;,  
-</span></span><span class="line"><span class="cl">改为：pathPrefix: &#39;&#39;，否则会导致地图显示不出来。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="mf">1.</span> <span class="err">绑定独立域名，修改</span><span class="n">gatsby</span><span class="o">-</span><span class="n">config文件</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">pathPrefix</span><span class="p">:</span> <span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">PATH_PREFIX</span> <span class="o">||</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl"><span class="err">改为：</span><span class="n">pathPrefix</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="err">，否则会导致地图显示不出来。</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">2. 隐藏地图街道名称，修改src/utils/const.js文件：
-</span></span><span class="line"><span class="cl">const ROAD_LABEL_DISPLAY = true;
-</span></span><span class="line"><span class="cl">改为：const ROAD_LABEL_DISPLAY = false;
-</span></span><span class="line"><span class="cl">修改地图高度：const MAP_HEIGHT = 600;
-</span></span><span class="line"><span class="cl">修改轨迹透明度：const LINE_OPACITY = 1;
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span> <span class="err">隐藏地图街道名称，修改</span><span class="n">src</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="k">const</span><span class="o">.</span><span class="n">js文件</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">ROAD_LABEL_DISPLAY</span> <span class="o">=</span> <span class="bp">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="err">改为：</span><span class="k">const</span> <span class="n">ROAD_LABEL_DISPLAY</span> <span class="o">=</span> <span class="bp">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="err">修改地图高度：</span><span class="k">const</span> <span class="n">MAP_HEIGHT</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="err">修改轨迹透明度：</span><span class="k">const</span> <span class="n">LINE_OPACITY</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">3. 静态文件同步到宝塔目录，修改.github/workflows/gh-pages.yml文件
-</span></span><span class="line"><span class="cl">- name: GitHub Pages
-</span></span><span class="line"><span class="cl">uses: crazy-max/ghaction-github-pages@v2.2.0
-</span></span><span class="line"><span class="cl">with:
-</span></span><span class="line"><span class="cl">target_branch: gh-pages
-</span></span><span class="line"><span class="cl">keep_history: true
-</span></span><span class="line"><span class="cl">build_dir: public
-</span></span><span class="line"><span class="cl">jekyll: false
-</span></span><span class="line"><span class="cl">改为：
-</span></span><span class="line"><span class="cl">- name: Deploy
-</span></span><span class="line"><span class="cl">uses: peaceiris/actions-gh-pages@v3
-</span></span><span class="line"><span class="cl">with:
-</span></span><span class="line"><span class="cl">personal_token: ${{ secrets.PERSONAL_TOKEN }}
-</span></span><span class="line"><span class="cl">external_repository: koobai/workouts_page
-</span></span><span class="line"><span class="cl">publish_dir: ./public
-</span></span><span class="line"><span class="cl">之后参考:[Github 自动构建 Hugo, 并通过 Webhook 同步到宝塔指定目录.](/hugo_action_webhooks)日志
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span> <span class="err">静态文件同步到宝塔目录，修改</span><span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="o">.</span><span class="n">yml文件</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">GitHub</span> <span class="n">Pages</span>
+</span></span><span class="line"><span class="cl"><span class="n">uses</span><span class="p">:</span> <span class="n">crazy</span><span class="o">-</span><span class="nb">max</span><span class="o">/</span><span class="n">ghaction</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">pages</span><span class="err">@</span><span class="n">v2</span><span class="o">.</span><span class="mf">2.0</span>
+</span></span><span class="line"><span class="cl"><span class="n">with</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">target_branch</span><span class="p">:</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
+</span></span><span class="line"><span class="cl"><span class="n">keep_history</span><span class="p">:</span> <span class="bp">true</span>
+</span></span><span class="line"><span class="cl"><span class="n">build_dir</span><span class="p">:</span> <span class="n">public</span>
+</span></span><span class="line"><span class="cl"><span class="n">jekyll</span><span class="p">:</span> <span class="bp">false</span>
+</span></span><span class="line"><span class="cl"><span class="err">改为：</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Deploy</span>
+</span></span><span class="line"><span class="cl"><span class="n">uses</span><span class="p">:</span> <span class="n">peaceiris</span><span class="o">/</span><span class="n">actions</span><span class="o">-</span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="err">@</span><span class="n">v3</span>
+</span></span><span class="line"><span class="cl"><span class="n">with</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">personal_token</span><span class="p">:</span> <span class="o">$</span><span class="p">{{</span> <span class="n">secrets</span><span class="o">.</span><span class="n">PERSONAL_TOKEN</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="n">external_repository</span><span class="p">:</span> <span class="n">koobai</span><span class="o">/</span><span class="n">workouts_page</span>
+</span></span><span class="line"><span class="cl"><span class="n">publish_dir</span><span class="p">:</span> <span class="o">./</span><span class="n">public</span>
+</span></span><span class="line"><span class="cl"><span class="err">之后参考</span><span class="p">:[</span><span class="n">Github</span> <span class="err">自动构建</span> <span class="n">Hugo</span><span class="p">,</span> <span class="err">并通过</span> <span class="n">Webhook</span> <span class="err">同步到宝塔指定目录</span><span class="o">.</span><span class="p">](</span><span class="o">/</span><span class="n">hugo_action_webhooks</span><span class="p">)</span><span class="err">日志</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">4. 自定义的样式代码，合并到了 src/styles/index.scss。
-</span></span><span class="line"><span class="cl">5. src/components/header/index.jsx 布局修改。
-</span></span><span class="line"><span class="cl">6. src/components/pages/index.jsx 布局修改。
-</span></span><span class="line"><span class="cl">7. src/components/RunTable/index.jsx 英文翻译
-</span></span><span class="line"><span class="cl">8. src/utils/const.js 自定义了地图 (Mapbox) token，同时修改了页面展示说明。
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span> <span class="err">自定义的样式代码，合并到了</span> <span class="n">src</span><span class="o">/</span><span class="n">styles</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">scss</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl"><span class="mf">5.</span> <span class="n">src</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">header</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">jsx</span> <span class="err">布局修改。</span>
+</span></span><span class="line"><span class="cl"><span class="mf">6.</span> <span class="n">src</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">pages</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">jsx</span> <span class="err">布局修改。</span>
+</span></span><span class="line"><span class="cl"><span class="mf">7.</span> <span class="n">src</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">RunTable</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">jsx</span> <span class="err">英文翻译</span>
+</span></span><span class="line"><span class="cl"><span class="mf">8.</span> <span class="n">src</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="k">const</span><span class="o">.</span><span class="n">js</span> <span class="err">自定义了地图</span> <span class="p">(</span><span class="n">Mapbox</span><span class="p">)</span> <span class="n">token</span><span class="err">，同时修改了页面展示说明。</span>
 </span></span></code></pre></div><p>由于有时候过敏，几年前买回来的 Watch 已基本上不带了，如今为了锻炼的时候记录，重新佩戴起来，看着每天锻炼圆环合并，挺满足。现在又多了一个佩戴理由：个人页面展示。如果问这十几天动起来之后，身体有没有什么变化，嗯&hellip;&hellip;好像还没有，继续坚持加油，总会带来自己想要的结果。</p>
 <p>上面说的最多的词是坚持，为什么？因为自己做什么事情都是三分钟热度。坚持，不代表痛苦，而是对自己的一种肯定。过程中有没有痛苦，当然有，晚上不吃，看着娘俩吃香的，那个馋呀&hellip;.。但每天坚持早起动起来，发现还蛮喜欢，因为一天的时间早上是最能自己把握的。当然起床前的那一刻赖床是无法避免，但生活不就是这样～～坚持加油~~</p>
 ]]></content:encoded></item><item><title>聊聊肥胖说说状态</title><link>https://koobai.com/body/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/body/</guid><description>自己的体重导致双脚变得沉重越来越扛不住它，曾经的那个追风少年早已不在，紧随而来的是中年肥胖油腻大叔。这几年的身体体检数据也一年比一年难看，脂肪肝、甘油三酯都不用说，连血糖数据都在高位徘徊。再加上自己本身有原发性高血压，身体早已把早年间所打下的基础透支完。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/jiankang.svg" alt="聊聊肥胖说说状态" /><p>自己的体重导致双脚变得沉重越来越扛不住它，曾经的那个追风少年早已不在，紧随而来的是中年肥胖油腻大叔。这几年的身体体检数据也一年比一年难看，脂肪肝、甘油三酯都不用说，连血糖数据都在高位徘徊。再加上自己本身有原发性高血压，身体早已把早年间所打下的基础透支完。</p>
