@@ -32,11 +32,14 @@
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>personal_token</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.PERSONAL_TOKEN }}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>external_repository</span><span class=p>:</span><span class=w> </span><span class=l>koobai/koobai.github.io</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>publish_dir</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
-</span></span></span></code></pre></div><p><strong>2.</strong> 打开宝塔面板，终端生成 git 公钥</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=c># Git全局配置和单个仓库的用户名邮箱配置</span><span class=w>
+</span></span></span></code></pre></div><p><strong>2.</strong> 打开宝塔面板，终端生成 git 公钥</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=c># 安装 Git</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=l>yum -y install git</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Git全局配置和单个仓库的用户名邮箱配置</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=l>git config --global user.name  &#34;username&#34;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=l>git config --global user.email  &#34;your@email.com&#34;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 生成git公钥用于自动拉取</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 生成git公钥用于自动拉取（一路回车）</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=l>ssh-keygen -t rsa -C &#34;你的@email.com&#34;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 查看git公钥</span><span class=w>
