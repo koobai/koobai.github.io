@@ -322,7 +322,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">personal_token</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.PERSONAL_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">external_repository</span><span class="p">:</span><span class="w"> </span><span class="l">koobai/koobai.github.io</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
-</span></span></span></code></pre></div><p><strong>2.</strong> 打开宝塔面板，终端生成 git 公钥</p>
+</span></span></span></code></pre></div><p><del><strong>2.</strong> 打开宝塔面板，终端生成 git 公钥</del></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c"># 安装 Git</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">yum -y install git</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
@@ -335,7 +335,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># 查看git公钥</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">cat ~/.ssh/id_rsa.pub</span><span class="w">
-</span></span></span></code></pre></div><p><strong>3.</strong> 添加公钥到到 Github：头像&ndash;Settings&ndash;SSH and GPG keys&ndash;New SSH key</p>
+</span></span></span></code></pre></div><p><del><strong>3.</strong> 添加公钥到到 Github：头像&ndash;Settings&ndash;SSH and GPG keys&ndash;New SSH key</del></p>
 <p><strong>4.</strong> 打开宝塔面板商店，安装 WebHook 插件&ndash;添加执行脚本 (复制以下代码)。其中&quot;gitHttp 为需同步的 github 仓库地址&quot;，&ldquo;gh-pages&quot;为仓库分支名称。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;&#34;</span>
