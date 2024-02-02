@@ -310,38 +310,38 @@
 <img loading="lazy" decoding="async" src="https://img.koobai.com/article/route.svg" alt="地图轨迹" class="img-hide" /></p>
 <p>在看 <a href="https://conge.livingwithfcs.org">conge</a> 日志过程中，发现有个跑步记录的页面很不错，通过他的分享知道了<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>开源项目，之后又发现<a href="https://github.com/ben-29/workouts_page">ben-29</a>基于<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>项目，增加了更多的运动类型。于是搭建了个“<a href="https://workouts.koobai.com">锻炼轨迹</a>”页面，算是从另外一个维度来督促自己坚持。</p>
 <p>搭建过程中折腾了很久，把一些注意点记录下，留作备忘。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="mf">1.</span> <span class="err">绑定独立域名，修改</span><span class="n">gatsby</span><span class="o">-</span><span class="n">config文件</span><span class="err">：</span>
-</span></span><span class="line"><span class="cl"><span class="n">pathPrefix</span><span class="p">:</span> <span class="n">process</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">PATH_PREFIX</span> <span class="o">||</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>  
-</span></span><span class="line"><span class="cl"><span class="err">改为：</span><span class="n">pathPrefix</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="err">，否则会导致地图显示不出来。</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">1. 绑定独立域名，修改gatsby-config文件：
+</span></span><span class="line"><span class="cl">pathPrefix: process.env.PATH_PREFIX || &#39;/&#39;,  
+</span></span><span class="line"><span class="cl">改为：pathPrefix: &#39;&#39;，否则会导致地图显示不出来。
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="mf">2.</span> <span class="err">隐藏地图街道名称，修改</span><span class="n">src</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="k">const</span><span class="o">.</span><span class="n">js文件</span><span class="err">：</span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">ROAD_LABEL_DISPLAY</span> <span class="o">=</span> <span class="bp">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="err">改为：</span><span class="k">const</span> <span class="n">ROAD_LABEL_DISPLAY</span> <span class="o">=</span> <span class="bp">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="err">修改地图高度：</span><span class="k">const</span> <span class="n">MAP_HEIGHT</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="err">修改轨迹透明度：</span><span class="k">const</span> <span class="n">LINE_OPACITY</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">2. 隐藏地图街道名称，修改src/utils/const.js文件：
+</span></span><span class="line"><span class="cl">const ROAD_LABEL_DISPLAY = true;
+</span></span><span class="line"><span class="cl">改为：const ROAD_LABEL_DISPLAY = false;
+</span></span><span class="line"><span class="cl">修改地图高度：const MAP_HEIGHT = 600;
+</span></span><span class="line"><span class="cl">修改轨迹透明度：const LINE_OPACITY = 1;
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="mf">3.</span> <span class="err">静态文件同步到宝塔目录，修改</span><span class="o">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="o">.</span><span class="n">yml文件</span>
-</span></span><span class="line"><span class="cl"><span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">GitHub</span> <span class="n">Pages</span>
-</span></span><span class="line"><span class="cl"><span class="n">uses</span><span class="p">:</span> <span class="n">crazy</span><span class="o">-</span><span class="nb">max</span><span class="o">/</span><span class="n">ghaction</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">pages</span><span class="err">@</span><span class="n">v2</span><span class="o">.</span><span class="mf">2.0</span>
-</span></span><span class="line"><span class="cl"><span class="n">with</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="n">target_branch</span><span class="p">:</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
-</span></span><span class="line"><span class="cl"><span class="n">keep_history</span><span class="p">:</span> <span class="bp">true</span>
-</span></span><span class="line"><span class="cl"><span class="n">build_dir</span><span class="p">:</span> <span class="n">public</span>
-</span></span><span class="line"><span class="cl"><span class="n">jekyll</span><span class="p">:</span> <span class="bp">false</span>
-</span></span><span class="line"><span class="cl"><span class="err">改为：</span>
-</span></span><span class="line"><span class="cl"><span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Deploy</span>
-</span></span><span class="line"><span class="cl"><span class="n">uses</span><span class="p">:</span> <span class="n">peaceiris</span><span class="o">/</span><span class="n">actions</span><span class="o">-</span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="err">@</span><span class="n">v3</span>
-</span></span><span class="line"><span class="cl"><span class="n">with</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="n">personal_token</span><span class="p">:</span> <span class="o">$</span><span class="p">{{</span> <span class="n">secrets</span><span class="o">.</span><span class="n">PERSONAL_TOKEN</span> <span class="p">}}</span>
-</span></span><span class="line"><span class="cl"><span class="n">external_repository</span><span class="p">:</span> <span class="n">koobai</span><span class="o">/</span><span class="n">workouts_page</span>
-</span></span><span class="line"><span class="cl"><span class="n">publish_dir</span><span class="p">:</span> <span class="o">./</span><span class="n">public</span>
-</span></span><span class="line"><span class="cl"><span class="err">之后参考</span><span class="p">:[</span><span class="n">Github</span> <span class="err">自动构建</span> <span class="n">Hugo</span><span class="p">,</span> <span class="err">并通过</span> <span class="n">Webhook</span> <span class="err">同步到宝塔指定目录</span><span class="o">.</span><span class="p">](</span><span class="o">/</span><span class="n">hugo_action_webhooks</span><span class="p">)</span><span class="err">日志</span>
+</span></span><span class="line"><span class="cl">3. 静态文件同步到宝塔目录，修改.github/workflows/gh-pages.yml文件
+</span></span><span class="line"><span class="cl">- name: GitHub Pages
+</span></span><span class="line"><span class="cl">uses: crazy-max/ghaction-github-pages@v2.2.0
+</span></span><span class="line"><span class="cl">with:
+</span></span><span class="line"><span class="cl">target_branch: gh-pages
+</span></span><span class="line"><span class="cl">keep_history: true
+</span></span><span class="line"><span class="cl">build_dir: public
+</span></span><span class="line"><span class="cl">jekyll: false
+</span></span><span class="line"><span class="cl">改为：
+</span></span><span class="line"><span class="cl">- name: Deploy
+</span></span><span class="line"><span class="cl">uses: peaceiris/actions-gh-pages@v3
+</span></span><span class="line"><span class="cl">with:
+</span></span><span class="line"><span class="cl">personal_token: ${{ secrets.PERSONAL_TOKEN }}
+</span></span><span class="line"><span class="cl">external_repository: koobai/workouts_page
+</span></span><span class="line"><span class="cl">publish_dir: ./public
+</span></span><span class="line"><span class="cl">之后参考:[Github 自动构建 Hugo, 并通过 Webhook 同步到宝塔指定目录.](/hugo_action_webhooks)日志
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="mf">4.</span> <span class="err">自定义的样式代码，合并到了</span> <span class="n">src</span><span class="o">/</span><span class="n">styles</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">scss</span><span class="err">。</span>
-</span></span><span class="line"><span class="cl"><span class="mf">5.</span> <span class="n">src</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">header</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">jsx</span> <span class="err">布局修改。</span>
-</span></span><span class="line"><span class="cl"><span class="mf">6.</span> <span class="n">src</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">pages</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">jsx</span> <span class="err">布局修改。</span>
-</span></span><span class="line"><span class="cl"><span class="mf">7.</span> <span class="n">src</span><span class="o">/</span><span class="n">components</span><span class="o">/</span><span class="n">RunTable</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">jsx</span> <span class="err">英文翻译</span>
-</span></span><span class="line"><span class="cl"><span class="mf">8.</span> <span class="n">src</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="k">const</span><span class="o">.</span><span class="n">js</span> <span class="err">自定义了地图</span> <span class="p">(</span><span class="n">Mapbox</span><span class="p">)</span> <span class="n">token</span><span class="err">，同时修改了页面展示说明。</span>
+</span></span><span class="line"><span class="cl">4. 自定义的样式代码，合并到了 src/styles/index.scss。
+</span></span><span class="line"><span class="cl">5. src/components/header/index.jsx 布局修改。
+</span></span><span class="line"><span class="cl">6. src/components/pages/index.jsx 布局修改。
+</span></span><span class="line"><span class="cl">7. src/components/RunTable/index.jsx 英文翻译
+</span></span><span class="line"><span class="cl">8. src/utils/const.js 自定义了地图 (Mapbox) token，同时修改了页面展示说明。
 </span></span></code></pre></div><p>由于有时候过敏，几年前买回来的 Watch 已基本上不带了，如今为了锻炼的时候记录，重新佩戴起来，看着每天锻炼圆环合并，挺满足。现在又多了一个佩戴理由：个人页面展示。如果问这十几天动起来之后，身体有没有什么变化，嗯&hellip;&hellip;好像还没有，继续坚持加油，总会带来自己想要的结果。</p>
 <p>上面说的最多的词是坚持，为什么？因为自己做什么事情都是三分钟热度。坚持，不代表痛苦，而是对自己的一种肯定。过程中有没有痛苦，当然有，晚上不吃，看着娘俩吃香的，那个馋呀&hellip;.。但每天坚持早起动起来，发现还蛮喜欢，因为一天的时间早上是最能自己把握的。当然起床前的那一刻赖床是无法避免，但生活不就是这样～～坚持加油~~</p>
 ]]></content:encoded></item><item><title>聊聊肥胖说说状态</title><link>https://koobai.com/body/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/body/</guid><description>自己的体重导致双脚变得沉重越来越扛不住它，曾经的那个追风少年早已不在，紧随而来的是中年肥胖油腻大叔。这几年的身体体检数据也一年比一年难看，脂肪肝、甘油三酯都不用说，连血糖数据都在高位徘徊。再加上自己本身有原发性高血压，身体早已把早年间所打下的基础透支完。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/jiankang.svg" alt="聊聊肥胖说说状态" /><p>自己的体重导致双脚变得沉重越来越扛不住它，曾经的那个追风少年早已不在，紧随而来的是中年肥胖油腻大叔。这几年的身体体检数据也一年比一年难看，脂肪肝、甘油三酯都不用说，连血糖数据都在高位徘徊。再加上自己本身有原发性高血压，身体早已把早年间所打下的基础透支完。</p>
