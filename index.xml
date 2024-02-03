@@ -165,7 +165,7 @@
 </span></span><span class="line"><span class="cl">      <span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="s1">&#39;_blank&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></div><p>对于用户体验来说，多了一步跳转，总归是不好的，但为了愉快的玩耍博客，稳妥一点更佳。现在把各个页面的评论都去掉了，只留下了唠叨跟博文评论，并且把博文的评论默认设为隐藏。倒也不是因为所谓的安全，主要是觉得评论的样式有待提高。</p>
+</span></span></code></pre></div><p>对于浏览体验来说，多了一步跳转，总归是不好，但为了愉快的玩耍博客，稳妥一点更佳。现在把各个页面的评论都去掉了，只留下了唠叨跟博文评论，并且把博文的评论默认设为隐藏。倒也不是因为所谓的安全，主要是觉得评论的样式有待提高。</p>
 <p>如果觉得跳转中间页很烦人，浏览器可以装个
 <a 
     
