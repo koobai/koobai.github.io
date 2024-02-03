@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>空白Koobai</title><link>https://koobai.com/</link><description>工作生活记录、折腾备忘, 同时分享下日常使用的软件、 观看的影视、喜欢的好物等~~</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 01 Feb 2024 22:28:55 +0800</lastBuildDate><atom:link href="https://koobai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>HUGO 外链跳转到中间页</title><link>https://koobai.com/zhongjiantiaozhuan/</link><pubDate>Thu, 01 Feb 2024 22:28:55 +0800</pubDate><guid>https://koobai.com/zhongjiantiaozhuan/</guid><description>前天在老麦博客中看到&amp;#34;给Twikoo添加链接跳转中间页&amp;#34;博文，因为外部链接你无法确定未来某一天可能就会变成不安全链接，从而影响到自己博客。同时又见到大大的小蜗牛也是因为安全的原因，把博客评论换成了GitHub Discussions。网上也有不少的案例，因为某个链接的原因，而被请喝茶或电话让自己排查。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/20240202_tiaozhuan1.webp" alt="HUGO 外链跳转到中间页" /><p>前天在老麦博客中看到&quot;<a href="https://www.iamlm.com/">给Twikoo添加链接跳转中间页</a>&ldquo;博文，因为外部链接你无法确定未来某一天可能就会变成不安全链接，从而影响到自己博客。同时又见到<a href="https://www.eallion.com/">大大的小蜗牛</a>也是因为安全的原因，把博客评论换成了GitHub Discussions。网上也有不少的案例，因为某个链接的原因，而被请喝茶或电话让自己排查。今天在<a href="https://lms.pub/">不亦乐乎</a>那见链接也是跳转到中间页，于是请教了下怎么实现的，感谢。之后经过与 AI 的博弈，搞定。这次使用 ChatGPT 跟 Claude 都不行，说了一堆，完全不懂，最后使用 coze 搞定基本框架，然后再来回沟通逐步完善功能。估计跟它使用的 ChatGPT  4.0 接口有关。想充值 ChatGPT，奈何月费太贵了。</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>空白Koobai</title><link>https://koobai.com/</link><description>工作生活记录、折腾备忘, 同时分享下日常使用的软件、 观看的影视、喜欢的好物等~~</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 01 Feb 2024 22:28:55 +0800</lastBuildDate><atom:link href="https://koobai.com/index.xml" rel="self" type="application/rss+xml"/><item><title>HUGO 外链跳转到中间页</title><link>https://koobai.com/zhongjiantiaozhuan/</link><pubDate>Thu, 01 Feb 2024 22:28:55 +0800</pubDate><guid>https://koobai.com/zhongjiantiaozhuan/</guid><description>前天在老麦博客中看到&amp;#34;给Twikoo添加链接跳转中间页&amp;#34;博文，因为外部链接你无法确定未来某一天可能就会变成不安全链接，从而影响到自己博客。同时又见到大大的小蜗牛也是因为安全的原因，把博客评论换成了GitHub Discussions。网上也有不少的案例，因为某个链接的原因，而被请喝茶或电话让自己排查。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/20240202_tiaozhuan1.webp" alt="HUGO 外链跳转到中间页" /><p>前天在老麦博客中看到&quot;
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cuaWFtbG0uY29tLw%3d%3d"
+    
+     target="_blank"
+>
+给Twikoo添加链接跳转中间页</a>&ldquo;博文，因为外部链接你无法确定未来某一天可能就会变成不安全链接，从而影响到自己博客。同时又见到
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cuZWFsbGlvbi5jb20v"
+    
+     target="_blank"
+>
+大大的小蜗牛</a>也是因为安全的原因，把博客评论换成了GitHub Discussions。网上也有不少的案例，因为某个链接的原因，而被请喝茶或电话让自己排查。今天在
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9sbXMucHViLw%3d%3d"
+    
+     target="_blank"
+>
+不亦乐乎</a>那见链接也是跳转到中间页，于是请教了下怎么实现的，感谢。之后经过与 AI 的博弈，搞定。这次使用 ChatGPT 跟 Claude 都不行，说了一堆，完全不懂，最后使用 coze 搞定基本框架，然后再来回沟通逐步完善功能。估计跟它使用的 ChatGPT  4.0 接口有关。想充值 ChatGPT，奈何月费太贵了。</p>
 <p>新建 js 文件，如：tiaozhuan.js。里面的网址为排除跳转中间页。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">checkParent</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">classNames</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
@@ -171,7 +192,14 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/js/tiaozhuan.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>搞定，整体思路是：js文件识别链接的a标签，并把链接用 base64 编码，同时排除一些不需要跳转中间页的class或网站。然后跳转到tiaozhuan.html文件中（链接格式为/tiaozhuan?target=base64编码），html文件承担了中间页具体信息，及跳转动作。如使用base64解码跳转的链接；倒计时自动跳转等。</p>
 <p>对于用户体验来说，多了一步跳转，总归是不好的，但为了愉快的玩耍博客，稳妥一点更佳。现在把各个页面的评论都去掉了，只留下了唠叨跟博文评论，并且把博文的评论默认设为隐藏。倒也不是因为所谓的安全，主要是觉得评论的样式有待提高。</p>
-<p>如果觉得跳转中间页很烦人，浏览器可以装个<a href="https://chromewebstore.google.com/detail/skip-redirect/jaoafjdoijdconemdmodhbfpianehlon">Skip Redirect</a>插件，告别所有网站的中间页跳转，直接抵达目标地址。</p>
+<p>如果觉得跳转中间页很烦人，浏览器可以装个
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9jaHJvbWV3ZWJzdG9yZS5nb29nbGUuY29tL2RldGFpbC9za2lwLXJlZGlyZWN0L2phb2FmamRvaWpkY29uZW1kbW9kaGJmcGlhbmVobG9u"
+    
+     target="_blank"
+>
+Skip Redirect</a>插件，告别所有网站的中间页跳转，直接抵达目标地址。</p>
 ]]></content:encoded></item><item><title>折腾博客更像是自己的精神鸦片</title><link>https://koobai.com/tossblog/</link><pubDate>Tue, 30 Jan 2024 15:40:49 +0800</pubDate><guid>https://koobai.com/tossblog/</guid><description>前两天看到说折腾博客实质上是新型电子游戏，博客服务器从 1 月初转入阿里云以后，自己就一直陆陆续续的在折腾页面布局。状态来说，自己折腾博客更像是精神鸦片，过程很嗨，一旦停下来就空虚无所事事。需找寻另外的事情来填补这逃避而空虚的心灵。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/20240130_tossblog.webp" alt="折腾博客更像是自己的精神鸦片" /><p>前两天看到说折腾博客实质上是新型电子游戏，博客服务器从 1 月初转入阿里云以后，自己就一直陆陆续续的在折腾页面布局。状态来说，自己折腾博客更像是精神鸦片，过程很嗨，一旦停下来就空虚无所事事。需找寻另外的事情来填补这逃避而空虚的心灵。</p>
 <p>追寻最开始玩博客的目的，到现在折腾博客，似乎都是在打发时间中，或者说逃避更重要的事情中，找到了一个让你兴奋而沉浸其中的投入。当你懂得怎么调整布局，一个按钮的大小一个图标的变化一个文本颜色的选择都是折腾过程的乐趣。特别是当你折腾过程中解决了一个难题，那种兴奋感无以言表。反观对于输出内容，兴趣不大，因为无法给你带来兴奋而满足，也有可能读书太少，从小作文分数都很低。有内容输出，更多的是记录，方便未来找寻现在的记忆。</p>
 <p>一件事情只要在自己的能力范围内，一旦愿意沉浸进去，就想好好折腾，享受其中的过程乐趣所带来的兴奋感。前两年无意中接触到机械键盘，就动手改轴下垫、换各种轴体、卫星轴加垫片等等，你说是为了有更合适的手感？可能这只是一个说服自己的理由，主要还是享受这折腾过程的兴奋感。就跟现在喜欢骑行，换链条、内外胎、脚踏、坐垫、车把等等一样，换了能带来怎么样的变化？对于只是休闲骑来说，并没有什么改变，但就是享受这过程的乐趣，居然自己会换胎了、会缠把带了。</p>
@@ -204,7 +232,21 @@
 <p>17 点左右，两天两晚的旅程愉快的结束，开始回杭。由于是在上海，也没计划多呆，想来，可以很方便的走起。</p>
 <p>在上海郊区很难发现有沪 A 的油车，两天下来在路上就见过一辆，新能源的到发现不少，很有意思。沪 C 是全国唯一全时段不能进上海市区的车牌，冷知识。有可能这次驾照要被扣分，因为快到路口要转弯的时候开到了公交专用道等红绿灯，没想到转弯道在旁边。另外这次驾车，感觉心有点急，有几次差点出事情，心平气和心平气和心平气和~~</p>
 ]]></content:encoded></item><item><title>图片通过 uPic 上传到 Github，然后自动同步到腾讯 COS / 又拍云 / B2</title><link>https://koobai.com/blogimg/</link><pubDate>Fri, 28 Jul 2023 16:18:05 +0800</pubDate><guid>https://koobai.com/blogimg/</guid><description>起因，自从把博客图片转移到又拍云之后，就通过 PicGo 直接上传，顺手也会再传一份到原先的多吉云，当是备份。本身这个流程没什么问题，但当看到斌仔说，他的方案是上传到 Githuab，再自动同步到各大存储桶。瞬间眼前一亮，我干嘛不这样呢，一次上传就行。目前博客样式或内容更新也是直接推送到Github，然后通过 Actions 自动构建及同步到各服务商，真是换了个场景就不知道了。折腾之路开始，记录留作备忘～</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/syncimg.svg" alt="图片通过 uPic 上传到 Github，然后自动同步到腾讯 COS / 又拍云 / B2" /><p>起因，自从把博客图片转移到又拍云之后，就通过 PicGo 直接上传，顺手也会再传一份到原先的多吉云，当是备份。本身这个流程没什么问题，但当看到斌仔说，他的方案是上传到 Github，再自动同步到各大存储桶。瞬间眼前一亮，我干嘛不这样呢，一次上传就行。目前博客样式或内容更新也是直接推送到Github，然后通过 Actions 自动构建及同步到各服务商，真是换了个场景就不知道了。折腾之路开始，记录留作备忘～</p>
-<p>找了一圈多吉云的 Actions 工作流，发现没有。<a href="https://eallion.com/">大大的小蜗牛</a>推荐了一个，试用了下，可能由于太久没更新或者自己不会使用，无效，找到原作者，沟通相对困难。决定放弃多吉云，转向腾讯云的 COS ，之前博文记录过<a href="/hugo_action_tencentcos/">Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存</a>，只需简单的修改下yml就行，其他具体设置参照之前的博文。</p>
+<p>找了一圈多吉云的 Actions 工作流，发现没有。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9lYWxsaW9uLmNvbS8%3d"
+    
+     target="_blank"
+>
+大大的小蜗牛</a>推荐了一个，试用了下，可能由于太久没更新或者自己不会使用，无效，找到原作者，沟通相对困难。决定放弃多吉云，转向腾讯云的 COS ，之前博文记录过
+<a 
+    
+        href="/hugo_action_tencentcos/"
+    
+    
+>
+Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存</a>，只需简单的修改下yml就行，其他具体设置参照之前的博文。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">name</span><span class="p">:</span> <span class="n">Sync</span> <span class="n">Tencent</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">on</span><span class="p">:</span>
@@ -242,7 +284,28 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Upload</span> <span class="n">to</span> <span class="n">COS</span>
 </span></span><span class="line"><span class="cl">        <span class="n">run</span><span class="p">:</span> <span class="n">coscmd</span> <span class="n">upload</span> <span class="o">-</span><span class="n">rfs</span> <span class="o">--</span><span class="n">delete</span> <span class="n">koobaiblog</span><span class="o">/</span> <span class="o">/</span>    <span class="c1"># 需同步的本地目录及COS目录</span>
-</span></span></code></pre></div><p>搞定腾讯云之后，开始寻找又拍云的 Actions 工作流，<a href="https://www.wangdu.site/">斌仔</a>博文里有详细的教程，但试用之后觉得不够完美，一是文件无法增量更新，另外一个是无法保持文件一致性，譬如删除了 Gtihub 下的文件，远端无法同步删除。经过一番搜索，发现<a href="https://her-cat.com/">她和她的猫</a>博文中有说到增量更新及一致性问题，但没给出具体的脚本，抱着试试看的态度跟作者联系了下，把我的强迫症给完美解决，非常感谢作者。以下是yml，其中 <code>UPYUN_BUCKET</code>、<code>OPERATOR</code>、<code>OPERATOR_PASSWORD</code> 分别是又拍云的服务名称、操作员、操作员密码。详细使用可参考作者的 <a href="https://github.com/marketplace/actions/upyun-deployer">Github</a>。</p>
+</span></span></code></pre></div><p>搞定腾讯云之后，开始寻找又拍云的 Actions 工作流，
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cud2FuZ2R1LnNpdGUv"
+    
+     target="_blank"
+>
+斌仔</a>博文里有详细的教程，但试用之后觉得不够完美，一是文件无法增量更新，另外一个是无法保持文件一致性，譬如删除了 Gtihub 下的文件，远端无法同步删除。经过一番搜索，发现
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9oZXItY2F0LmNvbS8%3d"
+    
+     target="_blank"
+>
+她和她的猫</a>博文中有说到增量更新及一致性问题，但没给出具体的脚本，抱着试试看的态度跟作者联系了下，把我的强迫症给完美解决，非常感谢作者。以下是yml，其中 <code>UPYUN_BUCKET</code>、<code>OPERATOR</code>、<code>OPERATOR_PASSWORD</code> 分别是又拍云的服务名称、操作员、操作员密码。详细使用可参考作者的 
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9naXRodWIuY29tL21hcmtldHBsYWNlL2FjdGlvbnMvdXB5dW4tZGVwbG95ZXI%3d"
+    
+     target="_blank"
+>
+Github</a>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">name: Sync Upyun
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">on:
@@ -268,7 +331,14 @@
 </span></span><span class="line"><span class="cl">          operator: ${{ secrets.OPERATOR }}
 </span></span><span class="line"><span class="cl">          password: ${{ secrets.OPERATOR_PASSWORD }}
 </span></span><span class="line"><span class="cl">          dir: koobaiblog  # 需同步的本地目录
-</span></span></code></pre></div><p>Backblaze B2 同步，<code>B2_APPKEY_ID</code> <code>B2_APPKEY</code>在<a href="https://secure.backblaze.com/app_keys.htm">Application Keys</a>菜单下生成就行。要特别注意的是<code>B2_BUCKET</code>写法，完整的写法是<code>b2://xxx</code>，其中xxx为存储桶名称。</p>
+</span></span></code></pre></div><p>Backblaze B2 同步，<code>B2_APPKEY_ID</code> <code>B2_APPKEY</code>在
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9zZWN1cmUuYmFja2JsYXplLmNvbS9hcHBfa2V5cy5odG0%3d"
+    
+     target="_blank"
+>
+Application Keys</a>菜单下生成就行。要特别注意的是<code>B2_BUCKET</code>写法，完整的写法是<code>b2://xxx</code>，其中xxx为存储桶名称。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">name: Sync B2
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">on:
@@ -290,17 +360,143 @@
 </span></span><span class="line"><span class="cl">        B2_BUCKET: ${{ secrets.B2_BUCKET }}
 </span></span><span class="line"><span class="cl">        B2_APPKEY_ID: ${{ secrets.B2_APPKEY_ID }}
 </span></span><span class="line"><span class="cl">        B2_APPKEY: ${{ secrets.B2_APPKEY }}
-</span></span></code></pre></div><p>找寻各个解决方案的过程中，试用了下<a href="https://nuoea.com/">归臧</a>的方案<code>Lsky</code>图床，发现只能同步到一个存储策略，更适合作为图片管理使用。还搜索到<code>ZFile</code>存储程序，支持多吉云，试用了下，每次也只能同步到一个存储策略，在 Github 中向作者提了Issues建议，能不能增加一次上传，同步到多平台存储选项，明确答复未来不支持。还发现<code>Picsee</code>，图片管理工具，支持同步到各大平台存储桶，但自己已经有<code>Eagle</code>了。</p>
-<p>为什么选择<code>uPic</code>收费软件而不用开源免费的<code>PicGo</code>？主要就是界面跟图标好看😂，另外一个是基于 Mac 原生开发。试用下来也非常好用，喜欢它通过设置快捷键快速上传。具体使用可参考各自的文档 <a href="https://github.com/gee1k/uPic">uPic</a>、<a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGO</a>。</p>
+</span></span></code></pre></div><p>找寻各个解决方案的过程中，试用了下
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9udW9lYS5jb20v"
+    
+     target="_blank"
+>
+归臧</a>的方案<code>Lsky</code>图床，发现只能同步到一个存储策略，更适合作为图片管理使用。还搜索到<code>ZFile</code>存储程序，支持多吉云，试用了下，每次也只能同步到一个存储策略，在 Github 中向作者提了Issues建议，能不能增加一次上传，同步到多平台存储选项，明确答复未来不支持。还发现<code>Picsee</code>，图片管理工具，支持同步到各大平台存储桶，但自己已经有<code>Eagle</code>了。</p>
+<p>为什么选择<code>uPic</code>收费软件而不用开源免费的<code>PicGo</code>？主要就是界面跟图标好看😂，另外一个是基于 Mac 原生开发。试用下来也非常好用，喜欢它通过设置快捷键快速上传。具体使用可参考各自的文档 
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9naXRodWIuY29tL2dlZTFrL3VQaWM%3d"
+    
+     target="_blank"
+>
+uPic</a>、
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9waWNnby5naXRodWIuaW8vUGljR28tRG9jL3poL2d1aWRlLw%3d%3d"
+    
+     target="_blank"
+>
+PicGO</a>。</p>
 <p>为什么要同步到多平台？数据多重备份总归是好的，另外就是一旦有这个想法之后，你不搞定这个 Actions，心里很难受。<code>腾讯 COS</code>会不会很贵？本来一共也就十几兆，一个 G 的量也就几块钱，可忽略不计。<code>又拍云</code>可申请联盟，每月免费 10G 存储及 15G 的 CDN。<code>Backblaze B2</code>每月免费 10G 存储及每天 1G 的流量，如果套壳 Cloudflare，流量个人使用等于不要钱。折腾的乐趣，就在于不停的折腾～</p>
 ]]></content:encoded></item><item><title>信息获取推荐及价值</title><link>https://koobai.com/information/</link><pubDate>Sun, 25 Jun 2023 20:33:50 +0800</pubDate><guid>https://koobai.com/information/</guid><description>进入移动互联网时代之后，每天被动或主动获取的各类信息非常多而杂。并且各大平台为了流量，绝大部分都是标题党，而且毫无价值可言，垃圾信息。为了让你沉浸其中，在平台多逗留一分钟，每家都是大数据算法，最终把你圈住。自己是一个自制力非常差的人，所以会把设备从系统层面完全隔绝各类推送，屏蔽非必要 APP 通知、不装短视频、新闻相关的 APP。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/information.webp" alt="信息获取推荐及价值" /><p>进入移动互联网时代之后，每天被动或主动获取的各类信息非常多而杂。并且各大平台为了流量，绝大部分都是标题党，而且毫无价值可言，垃圾信息。为了让你沉浸其中，在平台多逗留一分钟，每家都是大数据算法，最终把你圈住。自己是一个自制力非常差的人，所以会把设备从系统层面完全隔绝各类推送，屏蔽非必要 APP 通知、不装短视频、新闻相关的 APP。</p>
 <p>自己主要还是以主动的方式去获取信息，当然虽说是主动，但其实当你去关注某个 UP 主或者说大 V 的时候，其实有一部分也是平台根据你的喜好来推荐。不过目前获取信息渠道主要控制在<strong>微博、Youtube、Reeder</strong>。微博用的第三方 VVebo，Youtube 使用印度区会员，Reeder 阅读器买断。主要的目的是尽可能的减少广告、不必要的算法推荐，来更纯粹及集中的获取信息。</p>
 <p>日常关注的一些 UP 主或专题：</p>
 <ol>
-<li><a href="https://www.youtube.com/@dacongmovie" target="_blank">大聪看电影</a>，影视解说，声音跟解说风格都非常喜欢。<a href="https://weibo.com/u/6100165591" target="_blank">刘老师说电影</a>，解说风格偏幽默。<a href="https://weibo.com/u/1303413073" target="_blank">发条张的野馄饨摊儿</a>，偏长视频解说。现在看完影视，不看下解说，很多彩蛋及幕后故事是真发现不了。<a href="https://www.xiaoyuzhoufm.com/podcast/5e280fb1418a84a0461fc58c" target="_blank">硬核说</a>，影视播客，有趣的两个主持人。</li>
-<li><a href="https://www.youtube.com/@user-lk3gk5sd7n" target="_blank">先看评测</a>，硬件产品评测，严谨专业。<a href="https://www.youtube.com/@zhongwenze" target="_blank">钟文泽</a>，数码产品评测，说话风格偏有趣。<a href="https://weibo.com/u/1192966660" target="_blank">韩路</a>，汽车相关，喜欢他的韩路游记节目。<a href="https://www.youtube.com/@AkilaZhang" target="_blank">电丸科技AK</a>，科技话题，专业。<a href="https://www.youtube.com/@mediastorm6801" target="_blank">影视飓风</a>，画质很专业，及喜欢他的一些行业幕后。</li>
-<li><a href="https://www.youtube.com/@user-nc9xp1tb1u" target="_blank">睡前消息</a>，社会新闻评论。<a href="https://www.youtube.com/@xiaodaodalang" target="_blank">小岛大浪吹</a>，历史或新闻评论。<a href="https://weibo.com/u/5649624264" target="_blank">王骁Albert</a>，海外国家讲解。</li>
-<li><a href="https://www.huxiu.com/club/1000.html?object_type=51&object_id=1" target="_blank">虎嗅早报</a>，<a href="https://sspai.com/tag/%E6%B4%BE%E6%97%A9%E6%8A%A5" target="_blank">派早报</a>，<a href="https://www.ifanr.com/category/ifanrnews" target="_blank">iFanr 早报</a>，每早rss推送，快速了解下时下互联网、科技、社会新闻。</li>
+<li>
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cueW91dHViZS5jb20vQGRhY29uZ21vdmll"
+    
+     target="_blank"
+>
+大聪看电影</a>，影视解说，声音跟解说风格都非常喜欢。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93ZWliby5jb20vdS82MTAwMTY1NTkx"
+    
+     target="_blank"
+>
+刘老师说电影</a>，解说风格偏幽默。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93ZWliby5jb20vdS8xMzAzNDEzMDcz"
+    
+     target="_blank"
+>
+发条张的野馄饨摊儿</a>，偏长视频解说。现在看完影视，不看下解说，很多彩蛋及幕后故事是真发现不了。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cueGlhb3l1emhvdWZtLmNvbS9wb2RjYXN0LzVlMjgwZmIxNDE4YTg0YTA0NjFmYzU4Yw%3d%3d"
+    
+     target="_blank"
+>
+硬核说</a>，影视播客，有趣的两个主持人。</li>
+<li>
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cueW91dHViZS5jb20vQHVzZXItbGszZ2s1c2Q3bg%3d%3d"
+    
+     target="_blank"
+>
+先看评测</a>，硬件产品评测，严谨专业。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cueW91dHViZS5jb20vQHpob25nd2VuemU%3d"
+    
+     target="_blank"
+>
+钟文泽</a>，数码产品评测，说话风格偏有趣。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93ZWliby5jb20vdS8xMTkyOTY2NjYw"
+    
+     target="_blank"
+>
+韩路</a>，汽车相关，喜欢他的韩路游记节目。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cueW91dHViZS5jb20vQEFraWxhWmhhbmc%3d"
+    
+     target="_blank"
+>
+电丸科技AK</a>，科技话题，专业。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cueW91dHViZS5jb20vQG1lZGlhc3Rvcm02ODAx"
+    
+     target="_blank"
+>
+影视飓风</a>，画质很专业，及喜欢他的一些行业幕后。</li>
+<li>
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cueW91dHViZS5jb20vQHVzZXItbmM5eHAxdGIxdQ%3d%3d"
+    
+     target="_blank"
+>
+睡前消息</a>，社会新闻评论。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cueW91dHViZS5jb20vQHhpYW9kYW9kYWxhbmc%3d"
+    
+     target="_blank"
+>
+小岛大浪吹</a>，历史或新闻评论。
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93ZWliby5jb20vdS81NjQ5NjI0MjY0"
+    
+     target="_blank"
+>
+王骁Albert</a>，海外国家讲解。</li>
+<li>
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cuaHV4aXUuY29tL2NsdWIvMTAwMC5odG1sP29iamVjdF90eXBlPTUxJm9iamVjdF9pZD0x"
+    
+     target="_blank"
+>
+虎嗅早报</a>，
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9zc3BhaS5jb20vdGFnLyVFNiVCNCVCRSVFNiU5NyVBOSVFNiU4QSVBNQ%3d%3d"
+    
+     target="_blank"
+>
+派早报</a>，
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly93d3cuaWZhbnIuY29tL2NhdGVnb3J5L2lmYW5ybmV3cw%3d%3d"
+    
+     target="_blank"
+>
+iFanr 早报</a>，每早rss推送，快速了解下时下互联网、科技、社会新闻。</li>
 </ol>
 <p>自己经历过找工作还是通过报纸打电话的时代，到如今每个人都可以成为信息发布、传播者。如果不加以筛选、过滤，就会浸泡在各个算法推荐中，等你回过神来，时间已到半夜。说好的陪陪孩子、推进下工作进度、看看书、看部影视，又得说，明天再说。一复一日的这样消耗着。</p>
 <p>当你忙完一天回到家里，打开微博，看着时间线还停留在早上起床时间，赶紧刷新下一天中你都错过了什么。发现哪个明星塌房了、哪里出现安全隐患、地铁出现偷拍……。好像你错过了很多，但对你的影响是？少了聊天话题还是……？</p>
@@ -323,7 +519,14 @@
 <p>搜索一圈，决定使用开源的 FreshRSS 搭建服务用于数据同步、曾经的最爱 Reeder 作为电脑端阅读器、开源的 NetNewsWire 作为 iOS 端阅读器。</p>
 <p>搭建过程中还发现 RSSHub，开始没明白到底是干啥的，官网的介绍是：“RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以给任何奇奇怪怪的内容生成 RSS 订阅源。RSSHub 借助于开源社区的力量快速发展中，目前已适配数百家网站的上千项内容。” 在目前大多站点不提供 RSS 输出或者无法做到精细化输出（譬如只需要某个信息流站点的某标签/板块内容），RSSHub 确实起到了非常大的作用，根据文档直接配置 RSS 链接就行。不过如果它也没提供，那就需要自己通过它编写订阅源，看了下文档，嗨，这就不是我要考虑的问题了。</p>
 <p>一切准备就绪，试用了几天，发现几个问题：1. 无法通过阅读器直接刷新订阅源。2. NAS 没设置科学上网，Youtube 等订阅源无法添加到 FreshRSS。3. 通过 FreshRSS 订阅的 Youtube 频道在阅读器中无法直接播放。前面两点都解决了，第三点在 Reeder 牛逼的交互中，虽然影响不大，但这个强迫症呀。。。不爽。</p>
-<p>看着 Reeder 目前提供了 iCloud 数据同步服务，同时它对 Youtube 也有优化，心想要么直接购买 Mac、iOS 两端好了，去掉中间商 FreshRSS，省得麻烦，一顿纠结，收入囊中。虽然开源的 NetNewsWire 也提供 iCloud，但交互、及界面设计 Reeder 太爱了。譬如在文章页中，左滑就是源站打开，右滑关闭。一款愉悦的 App，会让生活增添一份色彩，博客重建之初，特意搭建了个 <a href="/apps">Apps</a> 分享页面。</p>
+<p>看着 Reeder 目前提供了 iCloud 数据同步服务，同时它对 Youtube 也有优化，心想要么直接购买 Mac、iOS 两端好了，去掉中间商 FreshRSS，省得麻烦，一顿纠结，收入囊中。虽然开源的 NetNewsWire 也提供 iCloud，但交互、及界面设计 Reeder 太爱了。譬如在文章页中，左滑就是源站打开，右滑关闭。一款愉悦的 App，会让生活增添一份色彩，博客重建之初，特意搭建了个 
+<a 
+    
+        href="/apps"
+    
+    
+>
+Apps</a> 分享页面。</p>
 <p>也趁着这次折腾，把自己站点 RSS 通过网上的主题模版重新梳理了下，全文可按格式段落输出了。现在不管是访问博友的站点，还是日常的信息流获取，都可以优雅且方便的随时随地享用，舒坦～</p>
 ]]></content:encoded></item><item><title>体验了一次群晖 NAS 的重要性</title><link>https://koobai.com/synologydrive/</link><pubDate>Fri, 05 May 2023 20:53:55 +0800</pubDate><guid>https://koobai.com/synologydrive/</guid><description>早上正准备打开昨天的项目文件继续完善，目录里找了一圈发现没有，完了，难不成自己误删了？睁大眼睛又找了几圈，呃。。。猝。转念一想，这个工作目录是实时单向同步到群晖 NAS 的，而且套件也设置了控制版本数量，心情平复很多。打开 Synology Drive，心态崩了，没发现历史版本，因为没启用回收站功能，版本控制需基于文件来，但没文件呀。。。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/synology_drive.webp" alt="体验了一次群晖 NAS 的重要性" /><p>早上正准备打开昨天的项目文件继续完善，目录里找了一圈发现没有，完了，难不成自己误删了？睁大眼睛又找了几圈，呃。。。猝。转念一想，这个工作目录是实时单向同步到群晖 NAS 的，而且套件也设置了控制版本数量，心情平复很多。打开 Synology Drive，心态崩了，没发现历史版本，因为没启用回收站功能，版本控制需基于文件来，但没文件呀。。。</p>
 <p>虽然项目大部分已交付给甲方，但防不住有修改意见，那会没源文件，想想就抓狂。Google 了下，群晖官方文档中提示 ：Synology Drive 管理控制台中的“版本资源管理器”可以勾选“显示删除的文件”找回。文件是有了，但这里面的删除文件是最初新建的文件，也就是说文件是空白的。。。</p>
@@ -334,7 +537,14 @@
 <li>重要目录启用回收站、回收站。可以到任务计划中设置一定周期自动删除回收站里的文件。</li>
 <li>重要文件多块硬盘备份，如组 Raid 或 计划备份。当然有条件的还可以多地备份。</li>
 </ol>
-<p>再说一句，群晖牛逼、NAS 牛逼～。更多群晖的介绍可参考之前的日志 <a href="/synology_ds920">Synology 群晖 DS920+ 使用之旅</a></p>
+<p>再说一句，群晖牛逼、NAS 牛逼～。更多群晖的介绍可参考之前的日志 
+<a 
+    
+        href="/synology_ds920"
+    
+    
+>
+Synology 群晖 DS920+ 使用之旅</a></p>
 ]]></content:encoded></item><item><title>旧 Macbook 装双系统 Windows 11</title><link>https://koobai.com/windows11/</link><pubDate>Thu, 27 Apr 2023 22:21:25 +0800</pubDate><guid>https://koobai.com/windows11/</guid><description>这些年来一直使用 Mac 电脑，从 iMac 到 2014 款 15 寸 Macbook Pro 再到 2019 款 16 寸 Macbook Pro。不记得从什么时候开始不再使用 Windows 电脑，只记得那会使用 xp、win 7 系统。不过现实中总有那么些事情需要用到 Windows，如：企业网银、某些硬件更新。之前装个 Win 7 虚拟机临时使用下，但从微软发布 Win 11 以后，看到更现代的界面，一直想尝试看看。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/win11.webp" alt="旧 Macbook 装双系统 Windows 11" /><p>这些年来一直使用 Mac 电脑，从 iMac 到 2014 款 15 寸 Macbook Pro 再到 2019 款 16 寸 Macbook Pro。不记得从什么时候开始不再使用 Windows 电脑，只记得那会使用 xp、win 7 系统。不过现实中总有那么些事情需要用到 Windows，如：企业网银、某些硬件更新。之前装个 Win 7 虚拟机临时使用下，但从微软发布 Win 11 以后，看到更现代的界面，一直想尝试看看。</p>
 <p>本打算继续采用虚拟机方式装 Win 11，但没成功。于是想着 14 款的 Mac 放着也是放着，直接装个双系统。实践的时候发现把事情想简单的了，由于硬件比较老旧，安装过程中遇到不少麻烦，想着再搜不到方法就放弃了，好在最终都解决。以问答形式记录下关键问题，留作备忘。</p>
 <h3 id="1-使用什么工具安装">1. 使用什么工具安装？</h3>
@@ -353,13 +563,62 @@
 <h3 id="5-怎么激活系统原生纯净的系统从哪获取">5. 怎么激活系统？原生纯净的系统从哪获取？</h3>
 <p>自动激活：<a href="https://github.com/TGSAN/CMWTAT_Digital_Edition" target="_blank">Official Site</a>。系统包iso：<a href="https://next.itellyou.cn" target="_blank">ITELLYOU</a> 或 <a href="https://tb.rg-adguard.net/public.php?lang=zh-CN" target="_blank">TechBench</a></p>
 <p>装之前准备一个有线鼠标，不然过程中很不方便。装完体验下来，界面跟之前的对比漂亮非常多，至于其他的，由于是老硬件，还要啥自行车。自己平常不玩游戏，所以这些年用 Mac 习惯了，而且其他对应的设备也都是 Apple，生态的互通互动方便很多。</p>
-]]></content:encoded></item><item><title>搭建个人锻炼轨迹页面</title><link>https://koobai.com/sports/</link><pubDate>Mon, 10 Apr 2023 16:47:30 +0800</pubDate><guid>https://koobai.com/sports/</guid><description>慢跑，以半个小时为基准，跑了几天之后发现除了腿酸疼之外，脚腕也不舒服。通过 conge 经验分享：初跑者的目的，一是养成习惯，二是控制野心不受伤。现在每天以15-20分钟为基准，跑不是目的，先培养习惯，让身体逐步适应锻炼。不过这几天脚腕疼得好像更厉害点，写这篇日志时脚腕在胀疼，可能跟最近走的路太多有关系，再适应适应。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/map.webp" alt="搭建个人锻炼轨迹页面" /><p>“<a href="/body">聊聊肥胖说说状态</a>”的日志已过去十几天，基本上做到了动起来：1.每天早起跑步。2.学习游泳。3.晚上空腹。</p>
-<p>慢跑，以半个小时为基准，跑了几天之后发现除了腿酸疼之外，脚腕也不舒服。通过 <a href="https://conge.livingwithfcs.org">conge</a> 经验分享：初跑者的目的，一是养成习惯，二是控制野心不受伤。现在每天以15-20分钟为基准，跑不是目的，先培养习惯，让身体逐步适应锻炼。不过这几天脚腕疼得好像更厉害点，写这篇日志时脚腕在胀疼，可能跟最近走的路太多有关系，再适应适应。</p>
+]]></content:encoded></item><item><title>搭建个人锻炼轨迹页面</title><link>https://koobai.com/sports/</link><pubDate>Mon, 10 Apr 2023 16:47:30 +0800</pubDate><guid>https://koobai.com/sports/</guid><description>慢跑，以半个小时为基准，跑了几天之后发现除了腿酸疼之外，脚腕也不舒服。通过 conge 经验分享：初跑者的目的，一是养成习惯，二是控制野心不受伤。现在每天以15-20分钟为基准，跑不是目的，先培养习惯，让身体逐步适应锻炼。不过这几天脚腕疼得好像更厉害点，写这篇日志时脚腕在胀疼，可能跟最近走的路太多有关系，再适应适应。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/map.webp" alt="搭建个人锻炼轨迹页面" /><p>“
+<a 
+    
+        href="/body"
+    
+    
+>
+聊聊肥胖说说状态</a>”的日志已过去十几天，基本上做到了动起来：1.每天早起跑步。2.学习游泳。3.晚上空腹。</p>
+<p>慢跑，以半个小时为基准，跑了几天之后发现除了腿酸疼之外，脚腕也不舒服。通过 
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9jb25nZS5saXZpbmd3aXRoZmNzLm9yZw%3d%3d"
+    
+     target="_blank"
+>
+conge</a> 经验分享：初跑者的目的，一是养成习惯，二是控制野心不受伤。现在每天以15-20分钟为基准，跑不是目的，先培养习惯，让身体逐步适应锻炼。不过这几天脚腕疼得好像更厉害点，写这篇日志时脚腕在胀疼，可能跟最近走的路太多有关系，再适应适应。</p>
 <p>游泳，之前没想着游泳，Eileen 说游泳是全身运动，更容易减肥，于是在家附近找了个游泳馆，尝试看看。说起游泳还是停留在小时候放牛时学的狗刨式游法，现在真正要游，其实完全不会。于是从看教学视频开始学，目前基本上每周去2-3次，现在要说有没有学会，嗯&hellip;&hellip;还没有，继续坚持努力。</p>
 <p>空腹，减肥最快的方式其实是不吃或者少吃，但咱也做不到也不健康。但零食、饮料、夜宵已完全戒掉，当然之前也不怎么吃。目前基本上保持晚上不吃晚餐，一天吃早中两餐，也算是遵循了816减肥方法。上周有几天没坚持住，继续坚持努力。</p>
 <p>当然更快更科学的减肥方式是，力量训练，一天摄入的热量少于消耗的热量自然而然就瘦了。还没打算这样做，一个是如果每次吃个东西还得查这个热量多少或者运动消耗了多少热量，生活太累了。另外力量训练，如果不请教练，自己瞎折腾器材，行不行？会不会容易受伤？教练太贵。还是先让身体动起来再说，看看能不能坚持，如果不能坚持一切都是白搭。
 <img loading="lazy" decoding="async" src="https://img.koobai.com/article/route.svg" alt="地图轨迹" class="img-hide" /></p>
-<p>在看 <a href="https://conge.livingwithfcs.org">conge</a> 日志过程中，发现有个跑步记录的页面很不错，通过他的分享知道了<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>开源项目，之后又发现<a href="https://github.com/ben-29/workouts_page">ben-29</a>基于<a href="https://github.com/yihong0618/running_page/blob/master/README-CN.md">running_page</a>项目，增加了更多的运动类型。于是搭建了个“<a href="https://workouts.koobai.com">锻炼轨迹</a>”页面，算是从另外一个维度来督促自己坚持。</p>
+<p>在看 
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9jb25nZS5saXZpbmd3aXRoZmNzLm9yZw%3d%3d"
+    
+     target="_blank"
+>
+conge</a> 日志过程中，发现有个跑步记录的页面很不错，通过他的分享知道了
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9naXRodWIuY29tL3lpaG9uZzA2MTgvcnVubmluZ19wYWdlL2Jsb2IvbWFzdGVyL1JFQURNRS1DTi5tZA%3d%3d"
+    
+     target="_blank"
+>
+running_page</a>开源项目，之后又发现
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9naXRodWIuY29tL2Jlbi0yOS93b3Jrb3V0c19wYWdl"
+    
+     target="_blank"
+>
+ben-29</a>基于
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9naXRodWIuY29tL3lpaG9uZzA2MTgvcnVubmluZ19wYWdlL2Jsb2IvbWFzdGVyL1JFQURNRS1DTi5tZA%3d%3d"
+    
+     target="_blank"
+>
+running_page</a>项目，增加了更多的运动类型。于是搭建了个“
+<a 
+    
+        href="https://workouts.koobai.com"
+    
+     target="_blank"
+>
+锻炼轨迹</a>”页面，算是从另外一个维度来督促自己坚持。</p>
 <p>搭建过程中折腾了很久，把一些注意点记录下，留作备忘。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">1. 绑定独立域名，修改gatsby-config文件：
 </span></span><span class="line"><span class="cl">pathPrefix: process.env.PATH_PREFIX || &#39;/&#39;,  
@@ -398,7 +657,14 @@
 ]]></content:encoded></item><item><title>聊聊肥胖说说状态</title><link>https://koobai.com/body/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/body/</guid><description>自己的体重导致双脚变得沉重越来越扛不住它，曾经的那个追风少年早已不在，紧随而来的是中年肥胖油腻大叔。这几年的身体体检数据也一年比一年难看，脂肪肝、甘油三酯都不用说，连血糖数据都在高位徘徊。再加上自己本身有原发性高血压，身体早已把早年间所打下的基础透支完。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/jiankang.svg" alt="聊聊肥胖说说状态" /><p>自己的体重导致双脚变得沉重越来越扛不住它，曾经的那个追风少年早已不在，紧随而来的是中年肥胖油腻大叔。这几年的身体体检数据也一年比一年难看，脂肪肝、甘油三酯都不用说，连血糖数据都在高位徘徊。再加上自己本身有原发性高血压，身体早已把早年间所打下的基础透支完。</p>
 <p>都说一胖毁所有，看见中意的衣服，一试这啥玩意；跑两步就气踹得不行；稍微蹲下双腿就发软；就连上完厕所擦屁股都变得不利索。知道胖不好，也不是没想着去减重。跑步、饿肚子，一段时间内坚持，减下去一点，但扛不住坚持，周而复始反而变得越来越胖。就跟搞博客一样，人换了一批又一批，都在于是否坚持得住。一个人能把坚持两个字做好，99% 的事情都能有成果。而自己属于什么事情都是三分钟热度，这个劲一过，抛在脑后失去动力。
 <img loading="lazy" decoding="async" src="https://img.koobai.com/article/huac.webp" alt="菜" class="img-hide" />
-之前日志<a href="/time">十年弹指一挥间</a>里写到事业回到原点，随之而来的压力，导致最近自己的状态非常差，什么事情都提不起兴趣也没耐心、胡思乱想、坐在电脑前发呆、无所适从。可能近段时间捣鼓博客是唯一一件让自己抽离现实或者说逃离现实的途径。 但这样肯定不是办法，是该做出改变，突出目前的困境。先从身体状态开始，让精神保持饱满，这样才有可能换来变化。</p>
+之前日志
+<a 
+    
+        href="/time"
+    
+    
+>
+十年弹指一挥间</a>里写到事业回到原点，随之而来的压力，导致最近自己的状态非常差，什么事情都提不起兴趣也没耐心、胡思乱想、坐在电脑前发呆、无所适从。可能近段时间捣鼓博客是唯一一件让自己抽离现实或者说逃离现实的途径。 但这样肯定不是办法，是该做出改变，突出目前的困境。先从身体状态开始，让精神保持饱满，这样才有可能换来变化。</p>
 <p>03 月 16 号唠叨的时候说：“身体是越来越胖，迈不开腿，嘴又管不太住，只能从调整饮食结构开始”。从当天到现在，每天晚上的坚持，发现身体还没什么变化。看来只想通过这种捷径方式不大行，身体还得动起来：计划每天早上 7 点之前起床跑步，先动起来。看看这次能不能坚持、能不能看到身体的变化、事情能不能突出困境。
 <img loading="lazy" decoding="async" src="https://img.koobai.com/article/niuxia.webp" alt="菜" class="img-hide" />
 不到一米七的身高，双腿总共扛了一百七十多斤的重量。之前看到一篇博文说：让自己体重超过一百五的人是怎么想的，怎么受得了。是的，我也不知道自己是怎么就不知不觉悄无声息的就超过了。而且最近身体坐一会，左腿就发麻，不知道怎么回事。<strong>控制自己体重，是为数不多能掌握在自己手中的事情，所有的变量都在于自己。</strong></p>
@@ -660,7 +926,28 @@
 <h3 id="总结">总结</h3>
 <p>1.机器是真吸灰尘，放置环境为电视柜，在有防尘网的前提下，也必须是几个月停机清理一次。<br /> 2.硬盘运行的炒豆子声音，可能因为硬盘容量小、转速不高、机器下面也垫了缓存垫，且在有门隔绝的前提下，基本上可以忽略不计。<br /> 3.是不是应该使用四盘位，自己使用的情况看，发现是性能过剩了，220 其实已满足需求。</p>
 <p>一年多使用下来，机器很满意。但目前市场上 NAS 品牌越来越多，如华为、绿联等，以群晖的高售价低配置，曾经“买系统送机器”的流传打趣，性价比越来越低，升级款 923，还是万年不变的千兆网口～～～</p>
-]]></content:encoded></item><item><title>Hugo主题实现自适应布局, 及自定义字体</title><link>https://koobai.com/hugo_responsive_font/</link><pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hugo_responsive_font/</guid><description>做事情的三分钟热度继续中，完善了博客的归档、标签云、平常观看的影视页面及文章页评论、标签等功能。过程很有趣及兴奋，就连大年三十都在乐此不疲的折腾着～～。由于当下移动设备为我们主要的浏览窗口，所以页面需考虑在对应的终端设备中实际的浏览体验。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/responsive.svg" alt="Hugo主题实现自适应布局, 及自定义字体" /><p>做事情的三分钟热度继续中，完善了博客的<a href="/archives">归档</a>、<a href="/tags">标签云</a>、<a href="/movies">平常观看的影视</a>页面及文章页评论、标签等功能。由于当下移动设备为我们主要的浏览窗口，所以页面需考虑在对应的终端设备中实际的浏览体验。</p>
+]]></content:encoded></item><item><title>Hugo主题实现自适应布局, 及自定义字体</title><link>https://koobai.com/hugo_responsive_font/</link><pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hugo_responsive_font/</guid><description>做事情的三分钟热度继续中，完善了博客的归档、标签云、平常观看的影视页面及文章页评论、标签等功能。过程很有趣及兴奋，就连大年三十都在乐此不疲的折腾着～～。由于当下移动设备为我们主要的浏览窗口，所以页面需考虑在对应的终端设备中实际的浏览体验。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/responsive.svg" alt="Hugo主题实现自适应布局, 及自定义字体" /><p>做事情的三分钟热度继续中，完善了博客的
+<a 
+    
+        href="/archives"
+    
+    
+>
+归档</a>、
+<a 
+    
+        href="/tags"
+    
+    
+>
+标签云</a>、
+<a 
+    
+        href="/movies"
+    
+    
+>
+平常观看的影视</a>页面及文章页评论、标签等功能。由于当下移动设备为我们主要的浏览窗口，所以页面需考虑在对应的终端设备中实际的浏览体验。</p>
 <p>简单直接的方法，在页面样式表中添加@media，并在对应的尺寸范围中完善所需的样式：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">max-width</span><span class="p">:</span><span class="nd">700px</span><span class="o">)</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="c">/* 浏览器宽度尺寸小于700所呈现的样式 */</span>
@@ -712,7 +999,21 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h3 id="感悟">感悟</h3>
 <p>由于自己并不懂技术，折腾博客过程中，想实现或者解决某一想法或问题时，都需要通过搜索引擎查阅大量的资料，花大把时间，最终才能勉强得以解决或者继续无解。这就是折腾过程中的乐趣，特别是实现或解决成功的那个兴奋欣慰感～～</p>
-]]></content:encoded></item><item><title>Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存</title><link>https://koobai.com/hugo_action_tencentcos/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hugo_action_tencentcos/</guid><description>把二级域名改成一级，过程中发现Cloudflare Pages如果要绑定一级，须把域名的DNS服务器解析过去。解析之后，自己的nas访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的COS对象存储配合内容分发网络CDN搭建。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/cdn.svg" alt="Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存" /><p>博客逐步搭建完善，更新了日常使用的<a href="https://koobai.com/apps/">App</a>、<a href="https://koobai.com/hardware/">硬件</a>页面。博客样式标题采用了&quot;<a href="https://github.com/atelier-anchor/smiley-sans" target="_blank">得意黑</a>&ldquo;开源字体。把二级域名改成一级，过程中发现 Cloudflare Pages 如果要绑定一级，须把域名的 DNS 服务器解析过去。解析之后，自己的 nas 访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel 可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的 COS 对象存储配合内容分发网络 CDN 搭建(主要它的 cosbrowser 界面是经过设计的 ᵔ◡ᵔ；客服也很负责，咨询问题会电话打过来详细教你如何操作)。</p>
+]]></content:encoded></item><item><title>Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存</title><link>https://koobai.com/hugo_action_tencentcos/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/hugo_action_tencentcos/</guid><description>把二级域名改成一级，过程中发现Cloudflare Pages如果要绑定一级，须把域名的DNS服务器解析过去。解析之后，自己的nas访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的COS对象存储配合内容分发网络CDN搭建。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/cdn.svg" alt="Github自动构建Hugo, 并同步到腾讯COS, 同时刷新CDN缓存" /><p>博客逐步搭建完善，更新了日常使用的
+<a 
+    
+        href="https://koobai.com/apps/"
+    
+     target="_blank"
+>
+App</a>、
+<a 
+    
+        href="https://koobai.com/hardware/"
+    
+     target="_blank"
+>
+硬件</a>页面。博客样式标题采用了&quot;<a href="https://github.com/atelier-anchor/smiley-sans" target="_blank">得意黑</a>&ldquo;开源字体。把二级域名改成一级，过程中发现 Cloudflare Pages 如果要绑定一级，须把域名的 DNS 服务器解析过去。解析之后，自己的 nas 访问变得不稳定，时不时的打不开，来来回回折腾了好几次，无解，只好改回去。 vercel 可以绑定一级，尝试之后，访问速度太慢，放弃。开始了解国内的云服务，学习到了对象储存、CDN，经过一番对比尝试，最终选择腾讯云的 COS 对象存储配合内容分发网络 CDN 搭建(主要它的 cosbrowser 界面是经过设计的 ᵔ◡ᵔ；客服也很负责，咨询问题会电话打过来详细教你如何操作)。</p>
 <p>在了解部署过程中发现 Cyrus&rsquo;s Blog 写的&rdquo;<a href="https://blog.xm.mk/posts/fc83" target="_blank">自动构建 Hugo 博客部署至腾讯云对象存储 COS 并刷新 CDN</a>&ldquo;教程，一番折腾，完美。感谢作者。<br />备份记录下过程: (详细的注释可查看 Cyrus&rsquo;s Blog)</p>
 <h3 id="准备工作">准备工作：</h3>
 <ol>
@@ -834,7 +1135,28 @@
 <p>这样国内网络访问的时候走腾讯 CDN，国外访问的时候走 vercel 平台所提供的节点。</p>
 ]]></content:encoded></item><item><title>十年弹指一挥间</title><link>https://koobai.com/time/</link><pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/time/</guid><description>最近脑子一直在想，是不是该搭个个人站，以展示日常工作项目，方便让潜在的公司了解，从而快速建立沟通。想着想着就往博客路线走了，离上次2012年搭建博客，时间过去了10年。细想这10年少了博客的日常记录，是少了点什么。虽然当下，能记录的平台、工具多不胜数，但博客始终是记录的动力。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/noy.webp" alt="十年弹指一挥间" /><p>最近脑子一直在想，是不是该搭个个人站，以展示日常工作项目，方便让潜在的公司了解，从而快速建立沟通。想着想着就往博客路线走了，离上次 2012 年搭建博客，时间过去了 10 年。细想这 10 年少了博客的日常记录，是少了点什么。虽然当下，能记录的平台、工具多不胜数，但博客始终是记录的动力。</p>
 <p>于是，了解了一圈搭建工具，最终使用 Hugo，搭配 GitHub <del>&amp; Cloudflare</del>来实现。搭建过程中，似乎找回了，十年前折腾博客的乐趣：选主题然后修改成自己中意的样子，很满足。</p>
-<p>既然，博客已搭建，定位还是日常的生活记录（搭建过程中，翻出以前的博客备份记录，看着每篇文字，了解彼时写的感受，嗯，这应该就是记录的意义）。同时打算分享下：<a href="/apps">日常使用的软件</a>、<a href="/movies">平常观看的影视</a>、<a href="/hardware">喜欢折腾的物品</a>等。</p>
+<p>既然，博客已搭建，定位还是日常的生活记录（搭建过程中，翻出以前的博客备份记录，看着每篇文字，了解彼时写的感受，嗯，这应该就是记录的意义）。同时打算分享下：
+<a 
+    
+        href="/apps"
+    
+    
+>
+日常使用的软件</a>、
+<a 
+    
+        href="/movies"
+    
+    
+>
+平常观看的影视</a>、
+<a 
+    
+        href="/hardware"
+    
+    
+>
+喜欢折腾的物品</a>等。</p>
 <p>十年间个人的变化，体重从一个量级跃升到另外好几个量级，头发从中间快速的退去，到干脆剃光。之前 2013 年有篇博客记录 Eileen 刚怀孕几个月，初为父母的心理活动，到今天，女儿已 9 周岁多，三年级了都，时间确实是弹指一挥间。十年前，写着刚考完路试拿驾照，买车需要等到买房了才能想。十年后，不管好不好，目标至少都实现了。</p>
 <p>十年后，事业好像回到原点，又到了以前的状态。希望 2023 年借由新的博客开始，也是新事业的起点。。。。加油。。。</p>
 ]]></content:encoded></item><item><title>入手机械键盘路程 &amp; VIA改键注释备忘</title><link>https://koobai.com/mechanical_keyboard/</link><pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate><guid>https://koobai.com/mechanical_keyboard/</guid><description>2021年03月在京东购买了京造K2（Keychron K2），这是第一把机械键盘。同年12月购买了sspai × Keychron 联名的K3，买它就单纯觉得白色好看。到此，客制化三个字也没听过，时间到了22年06月，sspai × Keychron 联名出了Q1，觉得配色也蛮好看，看介绍，才知道客制化概念，觉得蛮有意思的，于是买了这把Q1回来。</description><content:encoded><![CDATA[<img loading="lazy" decoding="async" src="https://img.koobai.com/article/zoom.jpg" alt="入手机械键盘路程 & VIA改键注释备忘" /><p>2021 年 03 月在京东购买了京造 K2（Keychron K2），这是第一把机械键盘。同年 12 月购买了 sspai × Keychron 联名的 K3，买它就单纯觉得白色好看。到此，客制化三个字也没听过，时间到了 22 年 06 月，sspai × Keychron 联名出了 Q1，觉得配色也蛮好看，看介绍，才知道客制化概念，蛮有意思，于是买了这把 Q1 回来。</p>
@@ -843,7 +1165,14 @@
 <p>谈不上入坑，对雨滴、麻将、HiFi 等，也没感觉。更多是因为颜值～～
 <img loading="lazy" decoding="async" src="https://img.koobai.com/article/zoombeimian.webp" alt="ZOOM 65" class="img-hide" /></p>
 <h3 id="via-软件中的宏any-使用注释备忘">VIA 软件中的宏、any 使用注释备忘：</h3>
-<p>完整的按键对照表参考文档：<a href="https://docs.qmk.fm/#/keycodes">https://docs.qmk.fm/#/keycodes</a><br>
+<p>完整的按键对照表参考文档：
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9kb2NzLnFtay5mbS8jL2tleWNvZGVz"
+    
+     target="_blank"
+>
+https://docs.qmk.fm/#/keycodes</a><br>
 LGUI = 左 cmd 键，LALT = 左 option 键，LCTL = 左 control 键，LSFT = 左 shift 键<br>
 (缩写写法对应按键：G = CMD，A = Option，C = Control，S = Shift)</p>
 <p>Mac 系统下 VIA 软件中的 Win = Command，Alt = Option</p>
@@ -852,11 +1181,25 @@ LGUI = 左 cmd 键，LALT = 左 option 键，LCTL = 左 control 键，LSFT = 左
 写法如：{KC_LGUI,KC_C}，意思为 CMD+C<br>
 写法如 2：{KC_LGUI,KC_LSFT,KC_4}，意思为 cmd+shift+4</p>
 <h3 id="2-any-键使用更自主的自定义按键">2. any 键使用(更自主的自定义按键)</h3>
-<p>文档：<a href="https://docs.qmk.fm/#/feature_advanced_keycodes">https://docs.qmk.fm/#/feature_advanced_keycodes</a><br>
+<p>文档：
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9kb2NzLnFtay5mbS8jL2ZlYXR1cmVfYWR2YW5jZWRfa2V5Y29kZXM%3d"
+    
+     target="_blank"
+>
+https://docs.qmk.fm/#/feature_advanced_keycodes</a><br>
 写法如：G(KC_C) 意思为 CMD+C<br>
 写法如 2：SGUI(kc_4) 意思为 cmd+shift+4</p>
 <h3 id="3-any-特殊用法键盘切换层--layer-0-1-2-3-">3. any 特殊用法：键盘切换层 ( LAYER 0 1 2 3 )</h3>
-<p>使用方法文档：<a href="https://docs.qmk.fm/#/feature_layers?id=switching-and-toggling-layers">https://docs.qmk.fm/#/feature_layers?id=switching-and-toggling-layers</a></p>
+<p>使用方法文档：
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9kb2NzLnFtay5mbS8jL2ZlYXR1cmVfbGF5ZXJzP2lkPXN3aXRjaGluZy1hbmQtdG9nZ2xpbmctbGF5ZXJz"
+    
+     target="_blank"
+>
+https://docs.qmk.fm/#/feature_layers?id=switching-and-toggling-layers</a></p>
 <h3 id="a-单击切换层">a. 单击切换层</h3>
 <p>写法如：TO(0) 或 直接在软件中选择 TO(0)按键。意思为单击进入键盘第零层</p>
 <h3 id="b-按住长按切换层">b. 按住（长按）切换层</h3>
@@ -865,9 +1208,23 @@ LGUI = 左 cmd 键，LALT = 左 option 键，LCTL = 左 control 键，LSFT = 左
 <p>写法如：LT(1,KC_C) 意思为按住(长按)进入键盘第一层，单击为字母 C</p>
 <h3 id="d-按住长按为修饰键可多个组合单击正常按键">d. 按住(长按)为修饰键（可多个组合），单击正常按键</h3>
 <p>修饰键为：command、optio 等等<br>
-使用方法文档：<a href="https://docs.qmk.fm/#/mod_tap">https://docs.qmk.fm/#/mod_tap</a><br>
+使用方法文档：
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9kb2NzLnFtay5mbS8jL21vZF90YXA%3d"
+    
+     target="_blank"
+>
+https://docs.qmk.fm/#/mod_tap</a><br>
 写法如：MT(MOD_LGUI,KC_C) 意思为按住为 CMD 键，单击为字母 C<br>
 写法如 2：MT(MOD_LGUI|MOD_LSFT,KC_C) 意思为按住为 cmd+shift 键，单击为字母 C</p>
 <h3 id="4-rgb-灯效">4. RGB 灯效</h3>
-<p>文档参考：<a href="https://docs.qmk.fm/#/feature_rgblight">https://docs.qmk.fm/#/feature_rgblight</a></p>
+<p>文档参考：
+<a 
+    
+        href="/tiaozhuan?target=aHR0cHM6Ly9kb2NzLnFtay5mbS8jL2ZlYXR1cmVfcmdibGlnaHQ%3d"
+    
+     target="_blank"
+>
+https://docs.qmk.fm/#/feature_rgblight</a></p>
 ]]></content:encoded></item></channel></rss>
